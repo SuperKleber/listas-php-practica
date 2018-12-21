@@ -1,0 +1,25 @@
+{
+  "name": "listas-php-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "isomorphic-fetch": "^2.2.1",
+    "less": "^3.9.0",
+    "next": "^7.0.2",
+    "next-router": "^1.3.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.6.3"
+  }
+}
