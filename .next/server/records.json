@@ -1,0 +1,65 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "external \"react\"": 0,
+      "external \"styled-jsx/style\"": 1,
+      "external \"@babel/runtime/regenerator\"": 2,
+      "pages/front_data/front_data.json": 3,
+      "external \"next/head\"": 4,
+      "multi ./pages/index.js": 5,
+      "external \"isomorphic-fetch\"": 6,
+      "node_modules/ignore-loader/index.js!styles/_master.less": 7,
+      "external \"vm\"": 8,
+      "multi node_modules/next/dist/pages/_app.js": 9,
+      "node_modules/next/dist/pages/_app.js": 10,
+      "external \"next/app\"": 11,
+      "multi node_modules/next/dist/pages/_error.js": 12,
+      "node_modules/next/dist/pages/_error.js": 13,
+      "external \"next/error\"": 14,
+      "multi node_modules/next/dist/pages/_document.js": 15,
+      "node_modules/next/dist/pages/_document.js": 16,
+      "external \"next/document\"": 17,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js 9ab10f4f1836e9a6e12da566c1f9e1b6": 18
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static\\wSKLA_x1YcEqYCQkjHNmR\\pages\\index.js": 0,
+      "static\\wSKLA_x1YcEqYCQkjHNmR\\pages\\_app.js": 1,
+      "static\\wSKLA_x1YcEqYCQkjHNmR\\pages\\_error.js": 2,
+      "static\\wSKLA_x1YcEqYCQkjHNmR\\pages\\_document.js": 3,
+      "static\\S2wOBvB6TKVXuN2k_xmBz\\pages\\index.js": 4,
+      "static\\S2wOBvB6TKVXuN2k_xmBz\\pages\\_app.js": 5,
+      "static\\S2wOBvB6TKVXuN2k_xmBz\\pages\\_error.js": 6,
+      "static\\S2wOBvB6TKVXuN2k_xmBz\\pages\\_document.js": 7
+    },
+    "bySource": {},
+    "usedIds": [
+      4,
+      5,
+      6,
+      7
+    ]
+  }
+}

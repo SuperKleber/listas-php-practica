@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import Head from "next/head"
 import "../styles/_master.less"
 
+import Login from "./dumb/Login"
+import Register from "./dumb/Register"
+
 export class Layout extends Component {
   render() {
-    const {title} = this.props
+    const {title, forms} = this.props
     return (
       <div>
         <Head>
@@ -21,30 +24,13 @@ export class Layout extends Component {
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         </Head>
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar-dark bg-dark">
             <a className="navbar-brand" href="">{title}</a>
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Login</button>
-
-            <div className="modal fade bd-example-modal-sm"  role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-sm">
-                    <div className="modal-content p-4">
-                        <h1>
-                            Login
-                        </h1>
-                        <form method="post" action="http://localhost/listas-php-react/server/index.php">
-                            <div className="form-group">
-                                <label htmlFor="exampleInputEmail1">Email address</label>
-                                <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                            </div>
-                            <div className="form-group">
-                                <label  htmlFor="exampleInputPassword1">Password</label>
-                                <input name="password" type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
-                            </div>
-                            <input type="text" name="origen" value="login" style={{display: "none"}} />
-                            <button type="submit" className="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
+            <div class="collapse navbar-collapse ">
+                <ul className="navbar-nav ml-auto ">
+                    <Login data={forms.login}></Login>
+                    <Register data={forms.register}></Register>
+                </ul>
             </div>
         </nav>
         {this.props.children}

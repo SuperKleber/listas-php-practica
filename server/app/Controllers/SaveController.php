@@ -10,7 +10,7 @@ class SaveController{
 
             $lista = new Lista();
             $lista->title = $postData["title"];
-            $lista->category = $postData["category"];
+            // $lista->category_id = $postData["category_id"];
             $lista->description = $postData["description"];
             $lista->save();
 

@@ -93,6 +93,214 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/Add.js":
+/*!***************************!*\
+  !*** ./components/Add.js ***!
+  \***************************/
+/*! exports provided: Add, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Add", function() { return Add; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./components/Form.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modal */ "./components/Modal.js");
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Add.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Add =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Add, _Component);
+
+  function Add() {
+    _classCallCheck(this, Add);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Add).apply(this, arguments));
+  }
+
+  _createClass(Add, [{
+    key: "render",
+    value: function render() {
+      var _this$props$form = this.props.form,
+          title = _this$props$form.title,
+          form = _this$props$form.form;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: title,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        data: form,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return Add;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+/* harmony default export */ __webpack_exports__["default"] = (Add);
+
+/***/ }),
+
+/***/ "./components/Form.js":
+/*!****************************!*\
+  !*** ./components/Form.js ***!
+  \****************************/
+/*! exports provided: Form, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Form.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+var Form =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Form, _Component);
+
+  function Form() {
+    _classCallCheck(this, Form);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Form).apply(this, arguments));
+  }
+
+  _createClass(Form, [{
+    key: "render",
+    value: function render() {
+      var _this$props$data = this.props.data,
+          method = _this$props$data.method,
+          action = _this$props$data.action,
+          origen = _this$props$data.origen,
+          form_group = _this$props$data.form_group,
+          btn_type = _this$props$data.btn_type,
+          btn_message = _this$props$data.btn_message;
+      var input = this.props.input;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        method: method,
+        action: action,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        },
+        __self: this
+      }, form_group.map(function (element) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-group",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          name: element.name,
+          placeholder: element.placeholder,
+          className: "form-control",
+          type: "text",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        }));
+      }), input && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: origen,
+        value: input,
+        style: {
+          display: "none"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "origen",
+        value: origen,
+        style: {
+          display: "none"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "btn  " + btn_type,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, btn_message));
+    }
+  }]);
+
+  return Form;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+/* harmony default export */ __webpack_exports__["default"] = (Form);
+
+/***/ }),
+
 /***/ "./components/Layout.js":
 /*!******************************!*\
   !*** ./components/Layout.js ***!
@@ -109,6 +317,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/_master.less */ "./styles/_master.less");
 /* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_master_less__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _dumb_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dumb/Login */ "./components/dumb/Login.js");
+/* harmony import */ var _dumb_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dumb/Register */ "./components/dumb/Register.js");
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -132,6 +342,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Layout =
 /*#__PURE__*/
 function (_Component) {
@@ -146,30 +358,32 @@ function (_Component) {
   _createClass(Layout, [{
     key: "render",
     value: function render() {
-      var title = this.props.title;
+      var _this$props = this.props,
+          title = _this$props.title,
+          forms = _this$props.forms;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 12
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 13
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 14
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 16
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
@@ -177,7 +391,7 @@ function (_Component) {
         content: "width=device-width, initial-scale=1, shrink-to-fit=no",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 17
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -187,7 +401,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 20
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -196,7 +410,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 23
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -205,7 +419,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -214,14 +428,14 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 25
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "navbar navbar-dark bg-dark",
+        className: "navbar navbar-expand navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -229,129 +443,38 @@ function (_Component) {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "button",
-        className: "btn btn-primary",
-        "data-toggle": "modal",
-        "data-target": ".bd-example-modal-sm",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal fade bd-example-modal-sm",
-        role: "dialog",
-        "aria-labelledby": "mySmallModalLabel",
-        "aria-hidden": "true",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 28
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-dialog modal-sm",
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "collapse navbar-collapse ",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-content p-4",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        data: forms.login,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 31
         },
         __self: this
-      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        method: "post",
-        action: "http://localhost/listas-php-react/server/index.php",
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        data: forms.register,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 32
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "exampleInputEmail1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, "Email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "email",
-        type: "email",
-        className: "form-control",
-        id: "exampleInputEmail1",
-        "aria-describedby": "emailHelp",
-        placeholder: "Enter email",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "exampleInputPassword1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "password",
-        type: "password",
-        className: "form-control",
-        id: "exampleInputPassword1",
-        placeholder: "Password",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        name: "origen",
-        value: "login",
-        style: {
-          display: "none"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, "Submit")))))), this.props.children);
+      })))), this.props.children);
     }
   }]);
 
@@ -374,6 +497,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dumb_Lista__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dumb/Lista */ "./components/dumb/Lista.js");
+/* harmony import */ var _Add__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Add */ "./components/Add.js");
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Listas.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -396,6 +520,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Listas =
 /*#__PURE__*/
 function (_Component) {
@@ -410,20 +535,30 @@ function (_Component) {
   _createClass(Listas, [{
     key: "render",
     value: function render() {
-      var listas = this.props.listas;
+      var _this$props = this.props,
+          listas = _this$props.listas,
+          forms = _this$props.forms;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Listas container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 9
         },
         __self: this
-      }, listas.map(function (element) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Add__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        form: forms.add_list,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }), listas.map(function (element) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Lista__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          form: forms.delete_list,
           data: element,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12
+            lineNumber: 16
           },
           __self: this
         });
@@ -434,6 +569,116 @@ function (_Component) {
   return Listas;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Listas);
+
+/***/ }),
+
+/***/ "./components/Modal.js":
+/*!*****************************!*\
+  !*** ./components/Modal.js ***!
+  \*****************************/
+/*! exports provided: Portal, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Portal", function() { return Portal; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vm */ "vm");
+/* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vm__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Modal.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Portal =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Portal, _Component);
+
+  function Portal() {
+    _classCallCheck(this, Portal);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Portal).apply(this, arguments));
+  }
+
+  _createClass(Portal, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          children = _this$props.children,
+          title = _this$props.title;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item m-2 ",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn btn-primary",
+        "data-toggle": "modal",
+        "data-target": "." + title,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        },
+        __self: this
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal " + title,
+        role: "dialog",
+        "aria-labelledby": "mySmallModalLabel",
+        "aria-hidden": "true",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-dialog modal-sm",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-content p-4",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }, title), children))));
+    }
+  }]);
+
+  return Portal;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+/* harmony default export */ __webpack_exports__["default"] = (Portal);
 
 /***/ }),
 
@@ -486,6 +731,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Category__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Category */ "./components/dumb/Category.js");
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js";
 
 
@@ -512,6 +758,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Lista =
 /*#__PURE__*/
 function (_React$Component) {
@@ -525,7 +772,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Lista).call(this));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      complete: true
+      complete: false
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clickComplete", function (event) {
@@ -544,68 +791,65 @@ function (_React$Component) {
       var _this$props$data = this.props.data,
           title = _this$props$data.title,
           category = _this$props$data.category,
-          description = _this$props$data.description;
+          description = _this$props$data.description,
+          lista_id = _this$props$data.lista_id;
+      var form = this.props.form.form;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "jsx-1984759267" + " " + "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        ref: this.lista,
-        onClick: this.clickComplete,
-        className: "jsx-1984759267" + " " + "Lista col shadow-none p-3 mb-3 mt-3 bg-light rounded",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
-        className: "jsx-1984759267",
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 24
         },
         __self: this
-      }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "jsx-1984759267" + " " + "container",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "jsx-1984759267" + " " + "row",
+        ref: this.lista,
+        onClick: this.clickComplete,
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Lista col-9 col-md-11 shadow-none p-3 mb-3 mt-3 bg-light rounded",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 25
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Category__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Category__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: category,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
-        className: "jsx-1984759267" + " " + " mt-3 text-muted",
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + " mt-3 text-muted",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 31
         },
         __self: this
-      }, description)), this.state.complete && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "jsx-1984759267" + " " + "Complete col-2 p-3 mb-3 mt-3 ",
+      }, description)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Complete col col-1 offset-1 offset-md-0 p-3 mb-3 mt-3 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 33
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-        styleId: "1984759267",
-        css: ".Lista.jsx-1984759267{cursor:pointer !important;}.Complete.jsx-1984759267{width:100%;height:100%;background:green;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE0QzRCLEFBR21ELEFBSWYsV0FDQyxZQUNLLEdBSnJCLGNBS0EiLCJmaWxlIjoiQzpcXHhhbXBwXFxodGRvY3NcXGxpc3Rhcy1waHAtcmVhY3RcXGNvbXBvbmVudHNcXGR1bWJcXExpc3RhLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgQ2F0ZWdvcnkgZnJvbSBcIi4vQ2F0ZWdvcnlcIlxyXG5cclxuXHJcbmNsYXNzIExpc3RhIGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcclxuICAgIHN0YXRlPXtcclxuICAgICAgICBjb21wbGV0ZTogdHJ1ZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICB9XHJcbiAgICBcclxuICAgIHJlbmRlcigpe1xyXG4gICAgICAgIGNvbnN0IHt0aXRsZSwgY2F0ZWdvcnksIGRlc2NyaXB0aW9ufSA9IHRoaXMucHJvcHMuZGF0YVxyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9IGNsYXNzTmFtZT1cIkxpc3RhIGNvbCBzaGFkb3ctbm9uZSBwLTMgbWItMyBtdC0zIGJnLWxpZ2h0IHJvdW5kZWRcIj5cclxuICAgICAgICAgICAgICAgICAgICA8aDM+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHt0aXRsZX1cclxuICAgICAgICAgICAgICAgICAgICA8L2gzPlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29udGFpbmVyXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicm93XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvQ2F0ZWdvcnk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICA8aDYgY2xhc3NOYW1lPVwiIG10LTMgdGV4dC1tdXRlZFwiPntkZXNjcmlwdGlvbn08L2g2PlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgIHRoaXMuc3RhdGUuY29tcGxldGUgJiZcclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIkNvbXBsZXRlIGNvbC0yIHAtMyBtYi0zIG10LTMgXCI+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG5cclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICAgICAgICAgICAgICAuTGlzdGF7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgLkNvbXBsZXRle1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAlO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiBncmVlbjtcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICBgfTwvc3R5bGU+XHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */",
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        data: form,
+        input: lista_id,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+        styleId: "91141790",
+        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF1QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICB9XHJcbiAgICBcclxuICAgIFxyXG4gICAgcmVuZGVyKCl7XHJcbiAgICAgICAgY29uc3Qge3RpdGxlLCBjYXRlZ29yeSwgZGVzY3JpcHRpb24sIGxpc3RhX2lkfSA9IHRoaXMucHJvcHMuZGF0YVxyXG4gICAgICAgIGNvbnN0IHtmb3JtfSA9IHRoaXMucHJvcHMuZm9ybVxyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gaW5wdXQ9e2xpc3RhX2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
+        dynamic: [this.state.complete && "background: rgba(45,210,45,0.5) !important;"],
         __self: this
       }));
     }
@@ -615,6 +859,99 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Lista);
+
+/***/ }),
+
+/***/ "./components/dumb/Login.js":
+/*!**********************************!*\
+  !*** ./components/dumb/Login.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Login; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Login.js";
+
+
+
+function Login(props) {
+  var _props$data = props.data,
+      title = _props$data.title,
+      form = _props$data.form;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: form,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/dumb/Register.js":
+/*!*************************************!*\
+  !*** ./components/dumb/Register.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Register; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Register.js";
+
+
+
+function Register(props) {
+  var _props$data = props.data,
+      title = _props$data.title,
+      form = _props$data.form;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: form,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
+/***/ "./pages/front_data/front_data.json":
+/*!******************************************!*\
+  !*** ./pages/front_data/front_data.json ***!
+  \******************************************/
+/*! exports provided: forms, default */
+/***/ (function(module) {
+
+module.exports = {"forms":{"login":{"title":"LOGIN","form":{"origen":"login","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"label":"Email","name":"email","placeholder":"Email"},{"label":"Password","name":"password","placeholder":"Password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"register":{"title":"REGISTER","form":{"origen":"register","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"label":"Email","name":"email","placeholder":"Email"},{"label":"Password","name":"password","placeholder":"Password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"add_list":{"title":"Agregar","form":{"origen":"add_list","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"name":"title","placeholder":"Título"},{"name":"description","placeholder":"Descripcion"}],"btn_type":"btn-success","btn_message":"Agregar"}},"delete_list":{"title":"X","form":{"origen":"delete_list","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[],"btn_type":"btn-danger","btn_message":"X"}}}};
 
 /***/ }),
 
@@ -636,6 +973,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _components_Listas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Listas */ "./components/Listas.js");
+/* harmony import */ var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json");
+var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\pages\\index.js";
 
@@ -665,6 +1004,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var index =
 /*#__PURE__*/
 function (_Component) {
@@ -681,17 +1021,19 @@ function (_Component) {
     value: function render() {
       var data = this.props.data;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         title: data.title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 20
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 21
         },
         __self: this
       }));
@@ -818,6 +1160,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("styled-jsx/style");
+
+/***/ }),
+
+/***/ "vm":
+/*!*********************!*\
+  !*** external "vm" ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("vm");
 
 /***/ })
 

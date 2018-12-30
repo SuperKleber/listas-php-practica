@@ -17,6 +17,7 @@ use App\Controllers\ReadController;
 use App\Controllers\SaveController;
 use App\Controllers\RegisterController;
 use App\Controllers\LoginController;
+use App\Controllers\DeleteController;
 
 
 
@@ -47,7 +48,7 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 
 if ($request->getMethod() == "POST")
 {
-    if ($request->getParsedBody()["origen"] == "add"){
+    if ($request->getParsedBody()["origen"] == "add_list"){
         $sessionUserId= $_SESSION["userId"] ?? null;
         if(!$sessionUserId)
         {
@@ -56,21 +57,35 @@ if ($request->getMethod() == "POST")
         }else{
             $Lista = new SaveController();
             $Lista->Save($request);
-            header('Location: http://localhost:3000/add');
+            header('Location: http://localhost:3000');
            
         }
     }
+    if ($request->getParsedBody()["origen"] == "delete_list"){
+        $sessionUserId= $_SESSION["userId"] ?? null;
+        if(!$sessionUserId)
+        {
+            echo"No tienes permisos para hacer esto";
+            die;
+        }else{
+            $Lista = new DeleteController();
+            $Lista->Delete($request);
+            header('Location: http://localhost:3000');
+           
+        }
+    }
+    
     elseif($request->getParsedBody()["origen"] == "register"){
     
         $Register = new RegisterController();
         $Register->SaveUser($request);
-        header('Location: http://localhost:3000/add');
+        header('Location: http://localhost:3000');
     }
     elseif($request->getParsedBody()["origen"] == "login"){
     
         $Login = new LoginController();
         $Login->Login($request);
-        header('Location: http://localhost:3000/add');
+        header('Location: http://localhost:3000');
     }
     
 }else{

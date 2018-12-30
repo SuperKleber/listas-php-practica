@@ -4,6 +4,8 @@ import "isomorphic-fetch"
 import Layout from "../components/Layout"
 import Listas from "../components/Listas"
 
+import Front_data from "./front_data/front_data.json"
+
 
 
 export class index extends Component {
@@ -15,9 +17,8 @@ export class index extends Component {
   render() {
     const {data} = this.props
     return (
-      <Layout title={data.title}>
-        <Listas listas={data.listas}>
-          
+      <Layout forms={Front_data.forms} title={data.title}>
+        <Listas forms={Front_data.forms} listas={data.listas}>
         </Listas>
       </Layout>
     )
