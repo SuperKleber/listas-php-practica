@@ -45,7 +45,7 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
 );  
 
 
-
+$redirect="https://listas-php-react.now.sh/";
 if ($request->getMethod() == "POST")
 {
     if ($request->getParsedBody()["origen"] == "add_list"){
@@ -57,7 +57,7 @@ if ($request->getMethod() == "POST")
         }else{
             $Lista = new SaveController();
             $Lista->Save($request);
-            header('Location: http://localhost:3000');
+            header("Location: $redirect");
            
         }
     }
@@ -70,7 +70,7 @@ if ($request->getMethod() == "POST")
         }else{
             $Lista = new DeleteController();
             $Lista->Delete($request);
-            header('Location: http://localhost:3000');
+            header("Location: $redirect");
            
         }
     }
@@ -79,13 +79,13 @@ if ($request->getMethod() == "POST")
     
         $Register = new RegisterController();
         $Register->SaveUser($request);
-        header('Location: http://localhost:3000');
+        header("Location: $redirect");
     }
     elseif($request->getParsedBody()["origen"] == "login"){
     
         $Login = new LoginController();
         $Login->Login($request);
-        header('Location: http://localhost:3000');
+        header("Location: $redirect");
     }
     
 }else{

@@ -18,7 +18,7 @@ class Lista extends React.Component {
     
     
     render(){
-        const {title, category, description, lista_id} = this.props.data
+        const {title, category, description, id} = this.props.data
         const {form} = this.props.form
         return (
             <div  className="row">
@@ -31,7 +31,7 @@ class Lista extends React.Component {
                     <h6 className=" mt-3 text-muted">{description}</h6>
                 </div>
                 <div className="Complete col col-1 offset-1 offset-md-0 p-3 mb-3 mt-3 ">
-                    <Form data={form} input={lista_id}>
+                    <Form data={form} id={id}>
 
                     </Form>
                 </div>

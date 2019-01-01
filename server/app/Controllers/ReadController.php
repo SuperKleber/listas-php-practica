@@ -10,7 +10,7 @@ class ReadController {
         // ->join("categories", "listas.category_id", "=","categories.category_id")
         // ->get();
         $listas = Lista::
-        select("listas.lista_id","listas.title", "listas.description")
+        select("listas.id","listas.title", "listas.description")
         ->where("listas.active", 1)
         ->get();
         return $listas;

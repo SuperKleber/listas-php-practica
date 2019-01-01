@@ -5,7 +5,7 @@
             "form":{
                 "origen":"login",
                 "method":"POST",
-                "action":"http://localhost/listas-php-react/server/index.php",
+                "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
                         "label":"Email",
@@ -27,7 +27,7 @@
             "form":{
                 "origen":"register",
                 "method":"POST",
-                "action":"http://localhost/listas-php-react/server/index.php",
+                "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
                         "label":"Email",
@@ -49,7 +49,7 @@
             "form":{
                 "origen":"add_list",
                 "method":"POST",
-                "action":"http://localhost/listas-php-react/server/index.php",
+                "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
                         "name":"title",
@@ -69,11 +69,14 @@
             "form":{
                 "origen":"delete_list",
                 "method":"POST",
-                "action":"http://localhost/listas-php-react/server/index.php",
+                "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[],
                 "btn_type":"btn-danger",
                 "btn_message":"X"
             }
         }
+    },
+    "server":{
+        "url": "https://listas-php-react.herokuapp.com/"
     }
 }

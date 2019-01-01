@@ -10,7 +10,7 @@ class LoginController{
             $user = User::where("email", $postData["email"])->first();
             if ($user){
                 if(\password_verify($postData["password"], $user->password)){
-                    $_SESSION["userId"] = $user->user_id;
+                    $_SESSION["userId"] = $user->id;
                 } else{
                     echo "CONTRASEÑA INCORRECTA";
                     die;
