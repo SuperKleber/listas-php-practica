@@ -5,9 +5,12 @@ import Modal from "./Modal"
 export class Add extends Component {
   render() {
     const {title, form}= this.props.form;
+    const {actualizar} = this.props
     return (
         <Modal title={title}>
-            <Form data={form}>
+            <Form 
+            actualizar={actualizar}
+            data={form}>
             </Form>
         </Modal>
     )

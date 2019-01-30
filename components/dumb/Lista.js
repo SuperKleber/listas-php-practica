@@ -14,12 +14,14 @@ class Lista extends React.Component {
         this.setState({
             complete : !this.state.complete
         })
+        // console.log(this.lista)
     }
     
     
     render(){
         const {title, category, description, id} = this.props.data
         const {form} = this.props.form
+        const {actualizar} = this.props
         return (
             <div  className="row">
                 <div  ref={this.lista} onClick={this.clickComplete}  className="Lista col-9 col-md-11 shadow-none p-3 mb-3 mt-3 bg-light rounded">
@@ -31,7 +33,7 @@ class Lista extends React.Component {
                     <h6 className=" mt-3 text-muted">{description}</h6>
                 </div>
                 <div className="Complete col col-1 offset-1 offset-md-0 p-3 mb-3 mt-3 ">
-                    <Form data={form} id={id}>
+                    <Form data={form} actualizar={actualizar} id={id}>
 
                     </Form>
                 </div>

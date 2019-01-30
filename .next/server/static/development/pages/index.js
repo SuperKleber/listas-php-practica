@@ -147,18 +147,20 @@ function (_Component) {
       var _this$props$form = this.props.form,
           title = _this$props$form.title,
           form = _this$props$form.form;
+      var actualizar = this.props.actualizar;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
         title: title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 10
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        actualizar: actualizar,
         data: form,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 11
         },
         __self: this
       }));
@@ -183,6 +185,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json");
+var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Form.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -195,13 +199,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var Form =
@@ -210,13 +217,36 @@ function (_Component) {
   _inherits(Form, _Component);
 
   function Form() {
+    var _this;
+
     _classCallCheck(this, Form);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Form).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Form).call(this));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "submit", function (e) {
+      e.preventDefault();
+      var data = new FormData(_this.formAjax.current);
+      fetch(_pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__.server.url, {
+        method: "POST",
+        credentials: "include",
+        body: data
+      }).then(function (res) {
+        _this.props.actualizar();
+      }); // this.props.componentWillReceiveProps()
+    });
+
+    _this.formAjax = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    return _this;
   }
 
   _createClass(Form, [{
     key: "render",
+    // submit=(e)=>{
+    //   this.requestAjax(e)
+    //   setTimeout(()=>{
+    //     this.props.actualizar()
+    //   }, 10)
+    // }
     value: function render() {
       var _this$props$data = this.props.data,
           method = _this$props$data.method,
@@ -225,73 +255,82 @@ function (_Component) {
           form_group = _this$props$data.form_group,
           btn_type = _this$props$data.btn_type,
           btn_message = _this$props$data.btn_message;
-      var input = this.props.input;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        method: method,
-        action: action,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        },
-        __self: this
-      }, form_group.map(function (element) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "form-group",
+      var actualizar = this.props.actualizar;
+      return (// <form method={method} action={Front_data.server.url}>
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12
+            lineNumber: 35
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          ref: this.formAjax,
+          method: method,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13
+            lineNumber: 36
           },
           __self: this
-        }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          name: element.name,
-          placeholder: element.placeholder,
-          className: "form-control",
+        }, form_group.map(function (element) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "form-group",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 41
+            },
+            __self: this
+          }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+            name: element.name,
+            placeholder: element.placeholder,
+            className: "form-control",
+            type: element.type,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 42
+            },
+            __self: this
+          }));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
+          name: "delete_list",
+          value: this.props.id,
+          style: {
+            display: "none"
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 52
           },
           __self: this
-        }));
-      }), input && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        name: origen,
-        value: input,
-        style: {
-          display: "none"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        name: "origen",
-        value: origen,
-        style: {
-          display: "none"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "btn  " + btn_type,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, btn_message));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          name: "origen",
+          value: origen,
+          style: {
+            display: "none"
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          onClick: this.submit,
+          className: "btn  " + btn_type,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 55
+          },
+          __self: this
+        }, btn_message)))
+      );
     }
   }]);
 
@@ -319,6 +358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_master_less__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _dumb_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dumb/Login */ "./components/dumb/Login.js");
 /* harmony import */ var _dumb_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dumb/Register */ "./components/dumb/Register.js");
+/* harmony import */ var _dumb_Logout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dumb/Logout */ "./components/dumb/Logout.js");
 var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -344,6 +384,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Layout =
 /*#__PURE__*/
 function (_Component) {
@@ -360,30 +401,31 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           title = _this$props.title,
-          forms = _this$props.forms;
+          forms = _this$props.forms,
+          actualizar = _this$props.actualizar;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 13
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
@@ -391,7 +433,7 @@ function (_Component) {
         content: "width=device-width, initial-scale=1, shrink-to-fit=no",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -401,7 +443,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -410,7 +452,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -419,7 +461,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -428,14 +470,14 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "navbar navbar-expand navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -443,38 +485,47 @@ function (_Component) {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         class: "collapse navbar-collapse ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
         data: forms.login,
+        actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: forms.register,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
-      })))), this.props.children);
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        data: forms.logout,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, " ")))), this.props.children);
     }
   }]);
 
@@ -510,13 +561,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -527,38 +580,67 @@ function (_Component) {
   _inherits(Listas, _Component);
 
   function Listas() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, Listas);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Listas).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Listas)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      listas: _this.props.listas,
+      forms: _this.props.forms
+    });
+
+    return _this;
   }
 
   _createClass(Listas, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      // console.log(nextProps.listas)
+      // console.log(nextProps.form)
+      // console.log(nextProps)  
+      this.setState({
+        listas: nextProps.listas,
+        forms: nextProps.forms
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          listas = _this$props.listas,
-          forms = _this$props.forms;
+      var _this$state = this.state,
+          listas = _this$state.listas,
+          forms = _this$state.forms;
+      var actualizar = this.props.actualizar;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Listas container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Add__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        actualizar: actualizar,
         form: forms.add_list,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 24
         },
         __self: this
       }), listas.map(function (element) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Lista__WEBPACK_IMPORTED_MODULE_1__["default"], {
           form: forms.delete_list,
           data: element,
+          actualizar: actualizar,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 32
           },
           __self: this
         });
@@ -778,7 +860,8 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clickComplete", function (event) {
       _this.setState({
         complete: !_this.state.complete
-      });
+      }); // console.log(this.lista)
+
     });
 
     _this.lista = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
@@ -792,13 +875,14 @@ function (_React$Component) {
           title = _this$props$data.title,
           category = _this$props$data.category,
           description = _this$props$data.description,
-          lista_id = _this$props$data.lista_id;
+          id = _this$props$data.id;
       var form = this.props.form.form;
+      var actualizar = this.props.actualizar;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -807,48 +891,49 @@ function (_React$Component) {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Lista col-9 col-md-11 shadow-none p-3 mb-3 mt-3 bg-light rounded",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Category__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: category,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 31
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + " mt-3 text-muted",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 33
         },
         __self: this
       }, description)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Complete col col-1 offset-1 offset-md-0 p-3 mb-3 mt-3 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         data: form,
-        input: lista_id,
+        actualizar: actualizar,
+        id: id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 36
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
         styleId: "91141790",
-        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF1QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICB9XHJcbiAgICBcclxuICAgIFxyXG4gICAgcmVuZGVyKCl7XHJcbiAgICAgICAgY29uc3Qge3RpdGxlLCBjYXRlZ29yeSwgZGVzY3JpcHRpb24sIGxpc3RhX2lkfSA9IHRoaXMucHJvcHMuZGF0YVxyXG4gICAgICAgIGNvbnN0IHtmb3JtfSA9IHRoaXMucHJvcHMuZm9ybVxyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gaW5wdXQ9e2xpc3RhX2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
+        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICAgICAgLy8gY29uc29sZS5sb2codGhpcy5saXN0YSlcclxuICAgIH1cclxuICAgIFxyXG4gICAgXHJcbiAgICByZW5kZXIoKXtcclxuICAgICAgICBjb25zdCB7dGl0bGUsIGNhdGVnb3J5LCBkZXNjcmlwdGlvbiwgaWR9ID0gdGhpcy5wcm9wcy5kYXRhXHJcbiAgICAgICAgY29uc3Qge2Zvcm19ID0gdGhpcy5wcm9wcy5mb3JtXHJcbiAgICAgICAgY29uc3Qge2FjdHVhbGl6YXJ9ID0gdGhpcy5wcm9wc1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gYWN0dWFsaXphcj17YWN0dWFsaXphcn0gaWQ9e2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
         dynamic: [this.state.complete && "background: rgba(45,210,45,0.5) !important;"],
         __self: this
       }));
@@ -884,18 +969,63 @@ function Login(props) {
   var _props$data = props.data,
       title = _props$data.title,
       form = _props$data.form;
+  var actualizar = props.actualizar;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    actualizar: actualizar,
     data: form,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
+/***/ "./components/dumb/Logout.js":
+/*!***********************************!*\
+  !*** ./components/dumb/Logout.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Logout; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
+var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Logout.js";
+
+
+
+function Logout(props) {
+  var _props$data = props.data,
+      title = _props$data.title,
+      form = _props$data.form;
+  var actualizar = props.actualizar;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item m-2",
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 8
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    actualizar: actualizar,
+    data: form,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
     },
     __self: this
   }));
@@ -948,10 +1078,10 @@ function Register(props) {
 /*!******************************************!*\
   !*** ./pages/front_data/front_data.json ***!
   \******************************************/
-/*! exports provided: forms, default */
+/*! exports provided: forms, server, default */
 /***/ (function(module) {
 
-module.exports = {"forms":{"login":{"title":"LOGIN","form":{"origen":"login","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"label":"Email","name":"email","placeholder":"Email"},{"label":"Password","name":"password","placeholder":"Password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"register":{"title":"REGISTER","form":{"origen":"register","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"label":"Email","name":"email","placeholder":"Email"},{"label":"Password","name":"password","placeholder":"Password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"add_list":{"title":"Agregar","form":{"origen":"add_list","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[{"name":"title","placeholder":"Título"},{"name":"description","placeholder":"Descripcion"}],"btn_type":"btn-success","btn_message":"Agregar"}},"delete_list":{"title":"X","form":{"origen":"delete_list","method":"POST","action":"http://localhost/listas-php-react/server/index.php","form_group":[],"btn_type":"btn-danger","btn_message":"X"}}}};
+module.exports = {"forms":{"login":{"title":"LOGIN","form":{"origen":"login","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"label":"Email","name":"email","placeholder":"Email","type":"email"},{"label":"Password","name":"password","placeholder":"Password","type":"password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"logout":{"title":"Cerrar Sesión","form":{"origen":"logout","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"btn_type":"btn-dark","btn_message":"Cerrar Sesión"}},"register":{"title":"REGISTER","form":{"origen":"register","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"label":"Email","name":"email","placeholder":"Email","type":"email"},{"label":"Password","name":"password","placeholder":"Password","type":"password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"add_list":{"title":"Agregar","form":{"origen":"add_list","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"name":"title","placeholder":"Título","type":"text"},{"name":"description","placeholder":"Descripcion","type":"text"}],"btn_type":"btn-success","btn_message":"Agregar"}},"delete_list":{"title":"X","form":{"origen":"delete_list","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"btn_type":"btn-danger","btn_message":"X"}}},"server":{"url":"http://localhost/listas-php-react/server/index.php"}};
 
 /***/ }),
 
@@ -992,13 +1122,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -1011,29 +1143,60 @@ function (_Component) {
   _inherits(index, _Component);
 
   function index() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, index);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(index).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(index)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "actualizar", function () {
+      fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        _this.setState({
+          data: data
+        });
+      });
+    });
+
+    return _this;
   }
 
   _createClass(index, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var rs = this.props.req;
+      console.log(rs);
+      this.setState({
+        data: this.props.data
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var data = this.props.data;
+      var data = this.state.data;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        actualizar: this.actualizar,
         forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         title: data.title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        actualizar: this.actualizar,
         forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 46
         },
         __self: this
       }));
@@ -1050,7 +1213,9 @@ function (_Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return fetch("http://localhost/listas-php-react/server/index.php");
+                return fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url, {
+                  credentials: "include"
+                });
 
               case 2:
                 req = _context.sent;
@@ -1060,7 +1225,8 @@ function (_Component) {
               case 5:
                 data = _context.sent;
                 return _context.abrupt("return", {
-                  data: data
+                  data: data,
+                  req: req
                 });
 
               case 7:

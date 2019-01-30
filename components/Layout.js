@@ -4,10 +4,11 @@ import "../styles/_master.less"
 
 import Login from "./dumb/Login"
 import Register from "./dumb/Register"
+import Logout from './dumb/Logout';
 
 export class Layout extends Component {
   render() {
-    const {title, forms} = this.props
+    const {title, forms, actualizar} = this.props
     return (
       <div>
         <Head>
@@ -28,8 +29,9 @@ export class Layout extends Component {
             <a className="navbar-brand" href="">{title}</a>
             <div class="collapse navbar-collapse ">
                 <ul className="navbar-nav ml-auto ">
-                    <Login data={forms.login}></Login>
+                    <Login data={forms.login} actualizar={actualizar}></Login>
                     <Register data={forms.register}></Register>
+                    <Logout data={forms.logout} actualizar={actualizar}> </Logout>
                 </ul>
             </div>
         </nav>

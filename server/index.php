@@ -1,5 +1,7 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 ini_set("display_errors", 1);
 ini_set("display_starup_error", 1);
 error_reporting(E_ALL);
@@ -41,65 +43,95 @@ $request = Zend\Diactoros\ServerRequestFactory::fromGlobals(
     $_GET,
     $_POST,
     $_COOKIE,
-    $_FILES
+    $_FILES,
+    $_SESSION
 );  
 
 
-$redirect="https://listas-php-react.now.sh/";
+// $redirect="https://listas-php-react.now.sh/";
+$redirect="http://localhost:3000/";
+
+
+
+
+// var_dump($_SESSION["userId"])
+// die;
+// $sessionUserId= $_SESSION["userId"] ?? null;
+$sessionUserId= $_SESSION["userId"] ?? null;
 if ($request->getMethod() == "POST")
 {
-    if ($request->getParsedBody()["origen"] == "add_list"){
-        $sessionUserId= $_SESSION["userId"] ?? null;
-        if(!$sessionUserId)
-        {
-            echo"No tienes permisos para hacer esto";
-            die;
-        }else{
-            $Lista = new SaveController();
-            $Lista->Save($request);
-            header("Location: $redirect");
-           
-        }
-    }
-    if ($request->getParsedBody()["origen"] == "delete_list"){
-        $sessionUserId= $_SESSION["userId"] ?? null;
-        if(!$sessionUserId)
-        {
-            echo"No tienes permisos para hacer esto";
-            die;
-        }else{
-            $Lista = new DeleteController();
-            $Lista->Delete($request);
-            header("Location: $redirect");
-           
-        }
-    }
-    
-    elseif($request->getParsedBody()["origen"] == "register"){
-    
+    // echo json_encode($request->getParsedBody());
+    if($request->getParsedBody()["origen"] == "register"){
         $Register = new RegisterController();
         $Register->SaveUser($request);
-        header("Location: $redirect");
+        // header("Location: $redirect");
+        echo json_encode("RGISTRADO");
     }
-    elseif($request->getParsedBody()["origen"] == "login"){
+    if($request->getParsedBody()["origen"] == "login"){
+        
+        $Login = new LoginController();
+        $Login->Logout();
+        $Login->Login($request);
+        header("Access-Control-Allow-Credentials: true");
+        // header("Location: $redirect");
+        // echo json_encode("LOGEADO");
+    }
+    if($request->getParsedBody()["origen"] == "logout"){
     
         $Login = new LoginController();
-        $Login->Login($request);
-        header("Location: $redirect");
+        $Login->Logout();
+        // header("Location: $redirect");
+        header("Access-Control-Allow-Credentials: false");
+        echo json_encode("SESIÓN CERRADA");
     }
-    
-}else{
-    $read = new ReadController();
-    $listas = $read->ReadAction();
-    
-    
-    $data = array(
-        "title" => "Listas",
-        "listas" => $listas
-    );
-    echo json_encode($data);
+    if(!$sessionUserId)
+    {
+        echo json_encode("No tienes permisos para hacer esto");
+        header("Access-Control-Allow-Credentials: false");
+        die;
+    }
+    else{
+        header("Access-Control-Allow-Credentials: true");
+        if ($request->getParsedBody()["origen"] == "add_list"){
+            // $sessionUserId= $_SESSION["userId"] ?? null;
+                
+                // echo json_encode("LISTA AGREGADA");
+                $Lista = new SaveController();
+                $Lista->Save($request, $sessionUserId);
+                
+                $read = new ReadController();
+                $listas = $read->ReadAction();
+                $data = array(
+                    "title" => "Listas",
+                    "listas" => $listas
+                );
+                echo json_encode($data);
+                // header("Location: $redirect");
+        }
+        if ($request->getParsedBody()["origen"] == "delete_list"){
+            
+            // echo json_encode("LISTA BORRADA");
+            $Lista = new DeleteController();
+            $Lista->Delete($request, $sessionUserId);
+            // header("Location: $redirect");
+        }
+        
+    }
 }
+// $user_id = $_SESSION["userId"];
 
 
 
+$read = new ReadController();
+
+$user_id = $read->getUserId($sessionUserId);
+$listas = $read->ReadAction($user_id);
+$data = array(
+    "title" => "Listas",
+    "listas" => $listas,
+    "session" => $sessionUserId
+);
+// var_dump($listas[0]);
+// die;
+echo json_encode($data);
 ?>

@@ -10,16 +10,30 @@
                     {
                         "label":"Email",
                         "name":"email",
-                        "placeholder":"Email"
+                        "placeholder":"Email",
+                        "type":"email"
                     },
                     {
                         "label":"Password",
                         "name":"password",
-                        "placeholder":"Password"
+                        "placeholder":"Password",
+                        "type":"password"
                     }
                 ],
                 "btn_type":"btn-success",
                 "btn_message":"Enviar"
+            }
+        },
+        "logout":{
+            "title": "Cerrar Sesión",
+            "form":{
+                "origen":"logout",
+                "method":"POST",
+                "action":"https://listas-php-react.herokuapp.com/",
+                "form_group":[
+                ],
+                "btn_type":"btn-dark",
+                "btn_message":"Cerrar Sesión"
             }
         },
         "register":{
@@ -32,12 +46,14 @@
                     {
                         "label":"Email",
                         "name":"email",
-                        "placeholder":"Email"
+                        "placeholder":"Email",
+                        "type":"email"
                     },
                     {
                         "label":"Password",
                         "name":"password",
-                        "placeholder":"Password"
+                        "placeholder":"Password",
+                        "type":"password"
                     }
                 ],
                 "btn_type":"btn-success",
@@ -53,11 +69,13 @@
                 "form_group":[
                     {
                         "name":"title",
-                        "placeholder":"Título"
+                        "placeholder":"Título",
+                        "type":"text"
                     },
                     {
                         "name":"description",
-                        "placeholder":"Descripcion"
+                        "placeholder":"Descripcion",
+                        "type":"text"
                     }
                 ],
                 "btn_type":"btn-success",
@@ -77,6 +95,6 @@
         }
     },
     "server":{
-        "url": "https://listas-php-react.herokuapp.com/"
+        "url": "http://localhost/listas-php-react/server/index.php"
     }
 }
