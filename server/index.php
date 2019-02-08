@@ -89,9 +89,9 @@ if ($request->getMethod() == "POST")
         echo json_encode("No tienes permisos para hacer esto");
         header("Access-Control-Allow-Credentials: false");
         die;
-    }
-    else{
+    }else{
         header("Access-Control-Allow-Credentials: true");
+        // var_dump($sessionUserId);
         if ($request->getParsedBody()["origen"] == "add_list"){
             // $sessionUserId= $_SESSION["userId"] ?? null;
                 
@@ -124,12 +124,12 @@ if ($request->getMethod() == "POST")
 
 $read = new ReadController();
 
-$user_id = $read->getUserId($sessionUserId);
-$listas = $read->ReadAction($user_id);
+// $user_id = $read->getUserId($sessionUserId);
+$listas = $read->ReadAction($sessionUserId);
 $data = array(
     "title" => "Listas",
     "listas" => $listas,
-    "session" => $sessionUserId
+    "session" => $sessionUserId 
 );
 // var_dump($listas[0]);
 // die;

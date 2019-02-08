@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form */ "./components/Form.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modal */ "./components/Modal.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Add.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Add.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json");
 var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Form.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Form.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dumb_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dumb/Login */ "./components/dumb/Login.js");
 /* harmony import */ var _dumb_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dumb/Register */ "./components/dumb/Register.js");
 /* harmony import */ var _dumb_Logout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dumb/Logout */ "./components/dumb/Logout.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -456,7 +456,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _dumb_Lista__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dumb/Lista */ "./components/dumb/Lista.js");
 /* harmony import */ var _Add__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Add */ "./components/Add.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Listas.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Listas.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -575,7 +575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vm */ "./node_modules/vm-browserify/index.js");
 /* harmony import */ var vm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vm__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\Modal.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Modal.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -683,7 +683,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Category; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Category.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Category.js";
 
 function Category(props) {
   var category = props.category;
@@ -721,7 +721,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Category__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Category */ "./components/dumb/Category.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -840,7 +840,7 @@ function (_React$Component) {
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
         styleId: "91141790",
-        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkM6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICAgICAgLy8gY29uc29sZS5sb2codGhpcy5saXN0YSlcclxuICAgIH1cclxuICAgIFxyXG4gICAgXHJcbiAgICByZW5kZXIoKXtcclxuICAgICAgICBjb25zdCB7dGl0bGUsIGNhdGVnb3J5LCBkZXNjcmlwdGlvbiwgaWR9ID0gdGhpcy5wcm9wcy5kYXRhXHJcbiAgICAgICAgY29uc3Qge2Zvcm19ID0gdGhpcy5wcm9wcy5mb3JtXHJcbiAgICAgICAgY29uc3Qge2FjdHVhbGl6YXJ9ID0gdGhpcy5wcm9wc1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gYWN0dWFsaXphcj17YWN0dWFsaXphcn0gaWQ9e2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
+        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICAgICAgLy8gY29uc29sZS5sb2codGhpcy5saXN0YSlcclxuICAgIH1cclxuICAgIFxyXG4gICAgXHJcbiAgICByZW5kZXIoKXtcclxuICAgICAgICBjb25zdCB7dGl0bGUsIGNhdGVnb3J5LCBkZXNjcmlwdGlvbiwgaWR9ID0gdGhpcy5wcm9wcy5kYXRhXHJcbiAgICAgICAgY29uc3Qge2Zvcm19ID0gdGhpcy5wcm9wcy5mb3JtXHJcbiAgICAgICAgY29uc3Qge2FjdHVhbGl6YXJ9ID0gdGhpcy5wcm9wc1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gYWN0dWFsaXphcj17YWN0dWFsaXphcn0gaWQ9e2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
         dynamic: [this.state.complete && "background: rgba(45,210,45,0.5) !important;"],
         __self: this
       }));
@@ -868,7 +868,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Login.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Login.js";
 
 
 
@@ -911,7 +911,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Logout.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Logout.js";
 
 
 
@@ -954,7 +954,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Register.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Register.js";
 
 
 
@@ -8537,7 +8537,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json");
 var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 
-var _jsxFileName = "C:\\xampp\\htdocs\\listas-php-react\\pages\\index.js";
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\pages\\index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -8602,8 +8602,8 @@ function (_Component) {
   _createClass(index, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      var rs = this.props.req;
-      console.log(rs);
+      // let rs = this.props.req
+      // console.log(rs)
       this.setState({
         data: this.props.data
       });
@@ -8612,13 +8612,15 @@ function (_Component) {
     key: "render",
     value: function render() {
       var data = this.state.data;
+      console.log("data.session");
+      console.log(data.session);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
         actualizar: this.actualizar,
         forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         title: data.title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -8627,7 +8629,7 @@ function (_Component) {
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 49
         },
         __self: this
       }));

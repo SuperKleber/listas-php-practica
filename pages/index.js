@@ -20,8 +20,8 @@ export class index extends Component {
   }
   
   componentWillMount(){
-    let rs = this.props.req
-    console.log(rs)
+    // let rs = this.props.req
+    // console.log(rs)
     this.setState({
       data: this.props.data
     })
@@ -39,6 +39,8 @@ export class index extends Component {
   }
   render() {
     const {data} = this.state
+    console.log("data.session")
+    console.log(data.session)
     return (
       <Layout
       actualizar={this.actualizar}
