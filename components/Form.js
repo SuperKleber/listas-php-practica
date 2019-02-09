@@ -19,14 +19,16 @@ export class Form extends Component {
       .then(res =>{ 
         this.props.actualizar()
       })
+      .then(()=>{
+        if(this.props.session){
+          let email = data.get("email")
+          let password = data.get("password")
+          console.log(data.get("email"))
+          this.props.session(email, password)
+        }
+      })
     // this.props.componentWillReceiveProps()
   }
-  // submit=(e)=>{
-  //   this.requestAjax(e)
-  //   setTimeout(()=>{
-  //     this.props.actualizar()
-  //   }, 10)
-  // }
   render() {
     const {method, action, origen, form_group, btn_type, btn_message} = this.props.data
     const {actualizar} = this.props

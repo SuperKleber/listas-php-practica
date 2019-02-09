@@ -139,6 +139,14 @@ function (_Component) {
         body: data
       }).then(function (res) {
         _this.props.actualizar();
+      }).then(function () {
+        if (_this.props.session) {
+          var email = data.get("email");
+          var password = data.get("password");
+          console.log(data.get("email"));
+
+          _this.props.session(email, password);
+        }
       }); // this.props.componentWillReceiveProps()
     });
 
@@ -148,12 +156,6 @@ function (_Component) {
 
   _createClass(Form, [{
     key: "render",
-    // submit=(e)=>{
-    //   this.requestAjax(e)
-    //   setTimeout(()=>{
-    //     this.props.actualizar()
-    //   }, 10)
-    // }
     value: function render() {
       var _this$props$data = this.props.data,
           method = _this$props$data.method,
@@ -167,7 +169,7 @@ function (_Component) {
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 37
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -175,7 +177,7 @@ function (_Component) {
           method: method,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 38
           },
           __self: this
         }, form_group.map(function (element) {
@@ -183,13 +185,13 @@ function (_Component) {
             className: "form-group",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 40
+              lineNumber: 42
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 41
+              lineNumber: 43
             },
             __self: this
           }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -199,7 +201,7 @@ function (_Component) {
             type: element.type,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 44
             },
             __self: this
           }));
@@ -212,7 +214,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 54
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -224,7 +226,7 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 55
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -233,7 +235,7 @@ function (_Component) {
           className: "btn  " + btn_type,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 57
           },
           __self: this
         }, btn_message)))
@@ -309,30 +311,31 @@ function (_Component) {
       var _this$props = this.props,
           title = _this$props.title,
           forms = _this$props.forms,
-          actualizar = _this$props.actualizar;
+          actualizar = _this$props.actualizar,
+          session = _this$props.session;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
@@ -340,7 +343,7 @@ function (_Component) {
         content: "width=device-width, initial-scale=1, shrink-to-fit=no",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 19
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -350,7 +353,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -359,7 +362,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -368,7 +371,7 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
@@ -377,14 +380,14 @@ function (_Component) {
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "navbar navbar-expand navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -392,36 +395,37 @@ function (_Component) {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         class: "collapse navbar-collapse ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        session: session,
         data: forms.login,
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
         data: forms.register,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -429,7 +433,7 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 35
         },
         __self: this
       }, " ")))), this.props.children);
@@ -868,7 +872,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
 /* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Modal */ "./components/Modal.js");
+/* harmony import */ var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/front_data/front_data.json */ "./pages/front_data/front_data.json");
+var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../pages/front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Login.js";
+
 
 
 
@@ -876,20 +883,28 @@ function Login(props) {
   var _props$data = props.data,
       title = _props$data.title,
       form = _props$data.form;
-  var actualizar = props.actualizar;
+  var actualizar = props.actualizar,
+      session = props.session;
+  var method = form.method,
+      action = form.action,
+      origen = form.origen,
+      form_group = form.form_group,
+      btn_type = form.btn_type,
+      btn_message = form.btn_message;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    session: session,
     actualizar: actualizar,
     data: form,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 12
     },
     __self: this
   }));
@@ -8586,8 +8601,20 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "session", function (email, password) {
+      console.log(_this.state.data.session);
+
+      if (_this.state.data.session != null) {
+        window.sessionStorage.email = email;
+        window.sessionStorage.password = password;
+      }
+    });
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "actualizar", function () {
-      fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url).then(function (res) {
+      fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url, {
+        method: "GET",
+        credentials: "include"
+      }).then(function (res) {
         return res.json();
       }).then(function (data) {
         _this.setState({
@@ -8611,28 +8638,43 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var data = this.state.data;
-      console.log("data.session");
-      console.log(data.session);
+      var data = this.state.data; // console.log("data.session")
+      // console.log(data.session)
+
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        session: this.session,
         actualizar: this.actualizar,
         forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         title: data.title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 54
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, "data.session es: ", data.session ? data.session : "no hay nada"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
         actualizar: this.actualizar,
         forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 60
         },
         __self: this
       }));
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // console.log(window.sessionStorage)
+      if (window.sessionStorage.email && window.sessionStorage.password) {} else {
+        console.log("sessionStorage no está definido");
+      }
     }
   }], [{
     key: "getInitialProps",
@@ -8647,6 +8689,7 @@ function (_Component) {
               case 0:
                 _context.next = 2;
                 return fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url, {
+                  method: "GET",
                   credentials: "include"
                 });
 

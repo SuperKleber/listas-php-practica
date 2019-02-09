@@ -2,6 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header("Access-Control-Allow-Credentials: true");
 ini_set("display_errors", 1);
 ini_set("display_starup_error", 1);
 error_reporting(E_ALL);
@@ -54,43 +55,38 @@ $redirect="http://localhost:3000/";
 
 
 
-// var_dump($_SESSION["userId"])
-// die;
-// $sessionUserId= $_SESSION["userId"] ?? null;
-$sessionUserId= $_SESSION["userId"] ?? null;
+$sessionUserId= $_SESSION["userId"] ?? null ;
 if ($request->getMethod() == "POST")
 {
-    // echo json_encode($request->getParsedBody());
+    
     if($request->getParsedBody()["origen"] == "register"){
         $Register = new RegisterController();
         $Register->SaveUser($request);
-        // header("Location: $redirect");
-        echo json_encode("RGISTRADO");
     }
     if($request->getParsedBody()["origen"] == "login"){
         
         $Login = new LoginController();
-        $Login->Logout();
+        // $Login->Logout();
         $Login->Login($request);
-        header("Access-Control-Allow-Credentials: true");
+           
         // header("Location: $redirect");
-        // echo json_encode("LOGEADO");
+            
     }
     if($request->getParsedBody()["origen"] == "logout"){
     
         $Login = new LoginController();
         $Login->Logout();
         // header("Location: $redirect");
-        header("Access-Control-Allow-Credentials: false");
-        echo json_encode("SESIÓN CERRADA");
+       
     }
+    
     if(!$sessionUserId)
     {
-        echo json_encode("No tienes permisos para hacer esto");
-        header("Access-Control-Allow-Credentials: false");
-        die;
+        // echo json_encode("No tienes permisos para hacer esto");
+       
+        // die;
     }else{
-        header("Access-Control-Allow-Credentials: true");
+       
         // var_dump($sessionUserId);
         if ($request->getParsedBody()["origen"] == "add_list"){
             // $sessionUserId= $_SESSION["userId"] ?? null;
@@ -117,21 +113,21 @@ if ($request->getMethod() == "POST")
         }
         
     }
+    
+        
 }
-// $user_id = $_SESSION["userId"];
+if ($request->getMethod() == "GET"){
+    $read = new ReadController();
+    // $userId= $read->getUserId($sessionUserId);
+    $listas = $read->ReadAction($sessionUserId);
+    $data = array(
+        "title" => "Listas",
+        "listas" => $listas,
+        "session" => $sessionUserId
+    );
+    echo json_encode($data);
+}
+// echo json_encode($data);
 
 
-
-$read = new ReadController();
-
-// $user_id = $read->getUserId($sessionUserId);
-$listas = $read->ReadAction($sessionUserId);
-$data = array(
-    "title" => "Listas",
-    "listas" => $listas,
-    "session" => $sessionUserId 
-);
-// var_dump($listas[0]);
-// die;
-echo json_encode($data);
 ?>

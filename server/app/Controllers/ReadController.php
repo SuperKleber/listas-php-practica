@@ -21,8 +21,7 @@ class ReadController {
     }
     public function getUserId($sessionUserId){
         $user = User::
-        select("id")
-        ->where("id", $sessionUserId)
+        where("id", $sessionUserId)
         ->first();
         return $user["id"];
     }
