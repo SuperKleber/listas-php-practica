@@ -20,16 +20,17 @@ export class Listas extends Component {
         const {actualizar} = this.props
 
     return (
-        <div className="Listas container">
-            <Add 
-            actualizar={actualizar}
-            form={forms.add_list}>
-
-            </Add>
+        <div className="Listas container mt-4">
+            <div className="row">
+                <Add 
+                actualizar={actualizar}
+                form={forms.add_list}>
+                </Add>
+            </div>
             {
                 listas.map((element)=>{
                     return(
-                        <Lista form={forms.delete_list} data={element} actualizar={actualizar} ></Lista>
+                        <Lista key={element.id} form={forms.delete_list} data={element} actualizar={actualizar} ></Lista>
                     )
                 })
             }

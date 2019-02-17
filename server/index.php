@@ -86,30 +86,20 @@ if ($request->getMethod() == "POST")
        
         // die;
     }else{
-       
-        // var_dump($sessionUserId);
         if ($request->getParsedBody()["origen"] == "add_list"){
-            // $sessionUserId= $_SESSION["userId"] ?? null;
-                
-                // echo json_encode("LISTA AGREGADA");
                 $Lista = new SaveController();
                 $Lista->Save($request, $sessionUserId);
-                
-                $read = new ReadController();
-                $listas = $read->ReadAction();
-                $data = array(
-                    "title" => "Listas",
-                    "listas" => $listas
-                );
-                echo json_encode($data);
-                // header("Location: $redirect");
         }
         if ($request->getParsedBody()["origen"] == "delete_list"){
             
             // echo json_encode("LISTA BORRADA");
-            $Lista = new DeleteController();
-            $Lista->Delete($request, $sessionUserId);
+            $Lista = new SaveController();
+            $Lista->Delete($request);
             // header("Location: $redirect");
+        }
+        if ($request->getParsedBody()["origen"] == "complete"){
+            $Lista = new SaveController();
+            $Lista->Complete($request);
         }
         
     }
@@ -118,12 +108,13 @@ if ($request->getMethod() == "POST")
 }
 if ($request->getMethod() == "GET"){
     $read = new ReadController();
-    // $userId= $read->getUserId($sessionUserId);
     $listas = $read->ReadAction($sessionUserId);
+    $user = $read->getUserEmail($sessionUserId);
     $data = array(
         "title" => "Listas",
         "listas" => $listas,
-        "session" => $sessionUserId
+        "session" => $sessionUserId,
+        "user"=> $user
     );
     echo json_encode($data);
 }

@@ -6,32 +6,29 @@ import Front_data from "../../pages/front_data/front_data.json"
 export default function Login(props) {
     const {title, form} = props.data
     const {actualizar,session} = props
-    const {method, action, origen, form_group, btn_type, btn_message} = form
     return (
         <Modal title={title}>
-            <Form session={session} actualizar={actualizar} data={form}>
+            <Form session={session} actualizar={actualizar} data={form} inModal={true}>
             </Form>
-            {/* <div>
-                <form action={Front_data.server.url} method={method}>
-                {
-                    form_group.map((element)=>{
-                        return(
-                            <div  className="form-group">
-                                <label>{element.label}</label>
-                                <input 
-                                name={element.name}
-                                placeholder={element.placeholder}
-                                className="form-control" 
-                                type={element.type}
-                                />
-                            </div>
-                        )
-                    })
-                }
-                <input type="text" name="origen" value={origen} style={{display: "none"}} />
-                <button  type="submmit"  className={"btn  " + btn_type}>{btn_message}</button>
-                </form>
-            </div> */}
         </Modal>
     )
 }
+// import React, { Component } from 'react'
+// import Form from "../Form"
+// import Modal from "../Modal"
+
+// export class Login extends Component {
+//   render() {
+//     const {title, form} = this.props.data
+//     const {actualizar,session} = this.props
+//     return (
+//         <Modal title={title} refe={this.modal}>
+//             <Form session={session} actualizar={actualizar} data={form}>
+//             </Form>
+//         </Modal>
+//     )
+//   }
+// }
+
+// export default Login
+

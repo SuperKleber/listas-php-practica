@@ -13,17 +13,20 @@ class ReadController {
         // ->join("categories", "listas.category_id", "=","categories.category_id")
         // ->get();
         $listas = Lista::
-        select("id","title", "description", "user_id")
+        select("id","title", "description", "user_id","complete")
         ->where("user_id", $sessionUserId)
         ->where("active", 1)
-        ->get();
+        ->orderBy("complete", "asc")
+        ->orderBy("created_at", "des")
+        ->get();    
         return $listas;
     }
-    public function getUserId($sessionUserId){
+    public function getUserEmail($sessionUserId){
         $user = User::
-        where("id", $sessionUserId)
+        select("email")
+        ->where("id", $sessionUserId)
         ->first();
-        return $user["id"];
+        return $user["email"];
     }
 }
 

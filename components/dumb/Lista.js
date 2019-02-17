@@ -1,6 +1,7 @@
 import React from 'react'
 import Category from "./Category"
 import Form from "../Form"
+import Front_data from "../../pages/front_data/front_data.json"
 
 class Lista extends React.Component {
     state={
@@ -14,9 +15,26 @@ class Lista extends React.Component {
         this.setState({
             complete : !this.state.complete
         })
-        // console.log(this.lista)
+        let data = new FormData()
+        data.append("origen", "complete")
+        data.append("complete", !this.state.complete ? 1:0)
+        data.append("id", this.props.data.id)
+        fetch (Front_data.server.url,{
+            method: "POST",
+            credentials: "include",
+            body: data
+        })
+            .then(res=>{      
+                this.props.actualizar()
+            }) 
     }
-    
+    componentWillMount(){
+        if(this.props.data.complete == 1){
+            this.setState({
+                complete : true
+            })
+        }
+    }
     
     render(){
         const {title, category, description, id} = this.props.data

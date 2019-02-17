@@ -26,13 +26,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -43,9 +45,29 @@ function (_Component) {
   _inherits(Add, _Component);
 
   function Add() {
+    var _getPrototypeOf2;
+
+    var _this;
+
     _classCallCheck(this, Add);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Add).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Add)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      handleAlert: null
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "add", function (data) {
+      _this.setState({
+        handleAlert: data
+      });
+    });
+
+    return _this;
   }
 
   _createClass(Add, [{
@@ -55,19 +77,27 @@ function (_Component) {
           title = _this$props$form.title,
           form = _this$props$form.form;
       var actualizar = this.props.actualizar;
+      var modalPermance = true; //modalPermanence sirve para que el Modal donde se encuentra no se cierre al completar un formulario
+      // console.log("handleALERT")
+      // console.log(this.state.handleAlert)
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
         title: title,
+        modalPermance: modalPermance,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 25
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        handleAlert: this.state.handleAlert,
+        action: this.add,
         actualizar: actualizar,
         data: form,
+        inModal: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 26
         },
         __self: this
       }));
@@ -77,6 +107,76 @@ function (_Component) {
   return Add;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Add);
+
+/***/ }),
+
+/***/ "./components/Alert.js":
+/*!*****************************!*\
+  !*** ./components/Alert.js ***!
+  \*****************************/
+/*! exports provided: Alert, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Alert", function() { return Alert; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Alert.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+var Alert =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Alert, _Component);
+
+  function Alert() {
+    _classCallCheck(this, Alert);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Alert).apply(this, arguments));
+  }
+
+  _createClass(Alert, [{
+    key: "render",
+    value: function render() {
+      var _this$props$data = this.props.data,
+          error = _this$props$data.error,
+          origen = _this$props$data.origen,
+          message = _this$props$data.message,
+          typeAlert = _this$props$data.typeAlert;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alert ".concat(typeAlert ? typeAlert : "alert-primary"),
+        role: "alert",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        },
+        __self: this
+      }, "".concat(message));
+    }
+  }]);
+
+  return Alert;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+/* harmony default export */ __webpack_exports__["default"] = (Alert);
 
 /***/ }),
 
@@ -94,19 +194,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json");
 var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../pages/front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
+/* harmony import */ var _Alert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Alert */ "./components/Alert.js");
 var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Form.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -118,36 +219,116 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Form =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Form, _Component);
 
-  function Form() {
+  _createClass(Form, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps() {
+      this.setState({
+        handleAlert: this.props.handleAlert
+      });
+    }
+  }]);
+
+  function Form(props) {
     var _this;
 
     _classCallCheck(this, Form);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Form).call(this));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Form).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      handleAlert: _this.props.handleAlert
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "validator", function (data) {
+      var form_group = _this.props.data.form_group;
+
+      if (form_group.length > 0) {
+        var isRequiredSuccess = true;
+        form_group.map(function (element, index) {
+          var value = true;
+
+          try {
+            value = element.name ? data.get(element.name) : true;
+          } catch (error) {
+            console.log("Es posible que la app no soporte el navegador: " + error);
+          }
+
+          if (element.required && !value) {
+            isRequiredSuccess = false;
+            document.getElementById(element.id).className = "form-control isRequired"; // la clase .form-control es usado por el Bootstrap
+            // Estilos de .isRequired está definido en los archivos .less
+          } else {
+            document.getElementById(element.id).className = "form-control";
+          }
+        });
+        return isRequiredSuccess;
+      } else {
+        return true;
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "pushHandlerAlert", function (res, typeAlert) {
+      var data = res;
+      data.typeAlert = typeAlert;
+      return data; // console.log(data)
+    });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "submit", function (e) {
       e.preventDefault();
       var data = new FormData(_this.formAjax.current);
-      fetch(_pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__.server.url, {
-        method: "POST",
-        credentials: "include",
-        body: data
-      }).then(function (res) {
-        _this.props.actualizar();
-      }).then(function () {
-        if (_this.props.session) {
-          var email = data.get("email");
-          var password = data.get("password");
-          console.log(data.get("email"));
+      var form_append = _this.props.data.form_append;
+      form_append.map(function (element) {
+        data.append(element.name, element.value);
+      });
+      _this.props.id && data.append("delete_list", _this.props.id);
 
-          _this.props.session(email, password);
-        }
-      }); // this.props.componentWillReceiveProps()
+      if (_this.validator(data)) {
+        fetch(_pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_1__.server.url, {
+          method: "POST",
+          credentials: "include",
+          body: data
+        }).then(function (res) {
+          return res.json();
+        }).then(function (res) {
+          if (!res.error) {
+            _this.setState({
+              handleAlert: null
+            });
+
+            _this.props.session && _this.props.session(data);
+            _this.props.logout && _this.props.logout();
+            _this.props.closeModal && _this.props.closeModal();
+            _this.props.action && _this.props.action(_this.pushHandlerAlert(res, "alert-success"));
+
+            _this.props.actualizar();
+          } else {
+            console.log("error en: " + res.origen);
+
+            _this.setState({
+              handleAlert: _this.pushHandlerAlert(res, "alert-danger")
+            });
+          } // return res.json()
+
+        }).catch(function (error) {
+          console.log("ha ocurrido un error: " + error);
+
+          _this.props.actualizar();
+        });
+      } else {
+        _this.setState({
+          handleAlert: _this.pushHandlerAlert({
+            error: true,
+            origen: "validator",
+            message: "Rellena todos los campos"
+          }, "alert-danger")
+        });
+      }
     });
 
     _this.formAjax = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
@@ -158,88 +339,84 @@ function (_Component) {
     key: "render",
     value: function render() {
       var _this$props$data = this.props.data,
+          required = _this$props$data.required,
           method = _this$props$data.method,
           action = _this$props$data.action,
           origen = _this$props$data.origen,
           form_group = _this$props$data.form_group,
           btn_type = _this$props$data.btn_type,
           btn_message = _this$props$data.btn_message;
-      var actualizar = this.props.actualizar;
-      return (// <form method={method} action={Front_data.server.url}>
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var _this$props = this.props,
+          actualizar = _this$props.actualizar,
+          isRequiredFailed = _this$props.isRequiredFailed,
+          inModal = _this$props.inModal,
+          alert = _this$props.alert;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        ref: this.formAjax,
+        method: method,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }, form_group.map(function (element) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: element.id,
+          className: "form-group",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 113
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          ref: this.formAjax,
-          method: method,
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 114
           },
           __self: this
-        }, form_group.map(function (element) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "form-group",
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 42
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 43
-            },
-            __self: this
-          }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-            name: element.name,
-            placeholder: element.placeholder,
-            className: "form-control",
-            type: element.type,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 44
-            },
-            __self: this
-          }));
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          name: "delete_list",
-          value: this.props.id,
-          style: {
-            display: "none"
-          },
+        }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          id: element.id,
+          name: element.name,
+          placeholder: element.placeholder,
+          className: "form-control ".concat(element.isRequired) // element.isRequired sirve para mostrar al usuario que ese campo es requerido
+          ,
+          type: element.type,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 115
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          name: "origen",
-          value: origen,
-          style: {
-            display: "none"
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 55
-          },
-          __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "button",
-          onClick: this.submit,
-          className: "btn  " + btn_type,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 57
-          },
-          __self: this
-        }, btn_message)))
-      );
+        }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "alerts",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }, this.state.handleAlert && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Alert__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        data: this.state.handleAlert,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        onClick: this.submit,
+        className: "btn  " + btn_type,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 133
+        },
+        __self: this
+      }, btn_message)));
     }
   }]);
 
@@ -310,10 +487,14 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           title = _this$props.title,
+          user = _this$props.user,
           forms = _this$props.forms,
           actualizar = _this$props.actualizar,
-          session = _this$props.session;
+          session = _this$props.session,
+          logout = _this$props.logout,
+          login = _this$props.login;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Layout",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
@@ -366,8 +547,8 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
-        integrity: "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+        integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
@@ -375,19 +556,25 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
-        integrity: "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy",
+        src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+        integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
         crossorigin: "anonymous",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 27
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      })), login ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "navbar navbar-expand navbar-dark bg-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 32
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -395,21 +582,28 @@ function (_Component) {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 33
         },
         __self: this
-      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "collapse navbar-collapse ",
+      }, "".concat(title, " de ").concat(user ? user : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "collapse navbar-collapse ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 34
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 35
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item m-2 ",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -418,25 +612,112 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 37
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        data: forms.register,
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item m-2 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 39
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        session: session,
+        data: forms.register,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item m-2 ",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        logout: logout,
         data: forms.logout,
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 43
         },
         __self: this
-      }, " ")))), this.props.children);
+      }, " "))))), this.props.children) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card m-auto",
+        style: {
+          width: "18rem"
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "card-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "Listas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "card-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, "Por favor Logueate o Reg\xEDstrate para poder usar la APP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex justify-content-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "m-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        session: session,
+        data: forms.login,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "m-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        session: session,
+        data: forms.register,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }))))));
     }
   }]);
 
@@ -530,10 +811,17 @@ function (_Component) {
           forms = _this$state.forms;
       var actualizar = this.props.actualizar;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Listas container",
+        className: "Listas container mt-4",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Add__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -541,17 +829,18 @@ function (_Component) {
         form: forms.add_list,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
-      }), listas.map(function (element) {
+      })), listas.map(function (element) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Lista__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: element.id,
           form: forms.delete_list,
           data: element,
           actualizar: actualizar,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 33
           },
           __self: this
         });
@@ -591,13 +880,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -607,22 +898,39 @@ function (_Component) {
   _inherits(Portal, _Component);
 
   function Portal() {
+    var _this;
+
     _classCallCheck(this, Portal);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Portal).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Portal).call(this));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "closeModal", function (e) {
+      !_this.props.modalPermance && $(_this.modal.current).modal("hide"); //funcion de BOOTSTRAP para cerrar el modal
+    });
+
+    _this.modal = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    return _this;
   }
 
   _createClass(Portal, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           children = _this$props.children,
-          title = _this$props.title;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item m-2 ",
+          title = _this$props.title,
+          refe = _this$props.refe;
+      var childrenWithProps = react__WEBPACK_IMPORTED_MODULE_0__["Children"].map(children, function (child) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(child, {
+          inModal: true,
+          closeModal: _this2.closeModal
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 20
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -632,7 +940,7 @@ function (_Component) {
         "data-target": "." + title,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 21
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -640,32 +948,65 @@ function (_Component) {
         role: "dialog",
         "aria-labelledby": "mySmallModalLabel",
         "aria-hidden": "true",
+        ref: this.modal,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-dialog modal-sm",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "modal-content p-4",
+        className: "modal-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 24
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 25
         },
         __self: this
-      }, title), children))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "modal-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "close",
+        "data-dismiss": "modal",
+        "aria-label": "Close",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        "aria-hidden": "true",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, "\xD7"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, childrenWithProps)))));
     }
   }]);
 
@@ -725,6 +1066,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Category__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Category */ "./components/dumb/Category.js");
 /* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Form */ "./components/Form.js");
+/* harmony import */ var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/front_data/front_data.json */ "./pages/front_data/front_data.json");
+var _pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../pages/front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js";
 
 
@@ -752,6 +1095,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Lista =
 /*#__PURE__*/
 function (_React$Component) {
@@ -771,8 +1115,19 @@ function (_React$Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clickComplete", function (event) {
       _this.setState({
         complete: !_this.state.complete
-      }); // console.log(this.lista)
+      });
 
+      var data = new FormData();
+      data.append("origen", "complete");
+      data.append("complete", !_this.state.complete ? 1 : 0);
+      data.append("id", _this.props.data.id);
+      fetch(_pages_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__.server.url, {
+        method: "POST",
+        credentials: "include",
+        body: data
+      }).then(function (res) {
+        _this.props.actualizar();
+      });
     });
 
     _this.lista = react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
@@ -780,6 +1135,15 @@ function (_React$Component) {
   }
 
   _createClass(Lista, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      if (this.props.data.complete == 1) {
+        this.setState({
+          complete: true
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props$data = this.props.data,
@@ -793,7 +1157,7 @@ function (_React$Component) {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -802,35 +1166,35 @@ function (_React$Component) {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Lista col-9 col-md-11 shadow-none p-3 mb-3 mt-3 bg-light rounded",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 46
         },
         __self: this
       }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Category__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: category,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 49
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + " mt-3 text-muted",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 51
         },
         __self: this
       }, description)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["91141790", [this.state.complete && "background: rgba(45,210,45,0.5) !important;"]]]) + " " + "Complete col col-1 offset-1 offset-md-0 p-3 mb-3 mt-3 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -839,12 +1203,12 @@ function (_React$Component) {
         id: id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 54
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
         styleId: "91141790",
-        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5QzRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICAgICAgLy8gY29uc29sZS5sb2codGhpcy5saXN0YSlcclxuICAgIH1cclxuICAgIFxyXG4gICAgXHJcbiAgICByZW5kZXIoKXtcclxuICAgICAgICBjb25zdCB7dGl0bGUsIGNhdGVnb3J5LCBkZXNjcmlwdGlvbiwgaWR9ID0gdGhpcy5wcm9wcy5kYXRhXHJcbiAgICAgICAgY29uc3Qge2Zvcm19ID0gdGhpcy5wcm9wcy5mb3JtXHJcbiAgICAgICAgY29uc3Qge2FjdHVhbGl6YXJ9ID0gdGhpcy5wcm9wc1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgIGNsYXNzTmFtZT1cInJvd1wiPlxyXG4gICAgICAgICAgICAgICAgPGRpdiAgcmVmPXt0aGlzLmxpc3RhfSBvbkNsaWNrPXt0aGlzLmNsaWNrQ29tcGxldGV9ICBjbGFzc05hbWU9XCJMaXN0YSBjb2wtOSBjb2wtbWQtMTEgc2hhZG93LW5vbmUgcC0zIG1iLTMgbXQtMyBiZy1saWdodCByb3VuZGVkXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgzPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7dGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMz5cclxuICAgICAgICAgICAgICAgICAgICA8Q2F0ZWdvcnkgY2F0ZWdvcnk9e2NhdGVnb3J5fT5cclxuICAgICAgICAgICAgICAgICAgICA8L0NhdGVnb3J5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNiBjbGFzc05hbWU9XCIgbXQtMyB0ZXh0LW11dGVkXCI+e2Rlc2NyaXB0aW9ufTwvaDY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiQ29tcGxldGUgY29sIGNvbC0xIG9mZnNldC0xIG9mZnNldC1tZC0wIHAtMyBtYi0zIG10LTMgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPEZvcm0gZGF0YT17Zm9ybX0gYWN0dWFsaXphcj17YWN0dWFsaXphcn0gaWQ9e2lkfT5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPC9Gb3JtPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAgICAgICAgIC5MaXN0YXtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICR7dGhpcy5zdGF0ZS5jb21wbGV0ZSAmJlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJiYWNrZ3JvdW5kOiByZ2JhKDQ1LDIxMCw0NSwwLjUpICFpbXBvcnRhbnQ7XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAuQ29tcGxldGV7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OmZsZXg7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBhbGlnbi1pdGVtczpjZW50ZXI7XHJcbiAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgYH08L3N0eWxlPlxyXG4gICAgICAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgTGlzdGFcclxuXHJcbiAgIl19 */\n/*@ sourceURL=D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
+        css: ".Lista.__jsx-style-dynamic-selector{cursor:pointer !important;".concat(this.state.complete && "background: rgba(45,210,45,0.5) !important;", ";}.Complete.__jsx-style-dynamic-selector{cursor:pointer !important;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUEyRDRCLEFBR21ELEFBSUEsMEJBRi9CLEFBR2lCLDZCQUhoQiw2Q0FJMkIsbUdBQ0wsNkZBQ3RCIiwiZmlsZSI6IkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxkdW1iXFxMaXN0YS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IENhdGVnb3J5IGZyb20gXCIuL0NhdGVnb3J5XCJcclxuaW1wb3J0IEZvcm0gZnJvbSBcIi4uL0Zvcm1cIlxyXG5pbXBvcnQgRnJvbnRfZGF0YSBmcm9tIFwiLi4vLi4vcGFnZXMvZnJvbnRfZGF0YS9mcm9udF9kYXRhLmpzb25cIlxyXG5cclxuY2xhc3MgTGlzdGEgZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xyXG4gICAgc3RhdGU9e1xyXG4gICAgICAgIGNvbXBsZXRlOiBmYWxzZVxyXG4gICAgfVxyXG4gICAgY29uc3RydWN0b3IoKXtcclxuICAgICAgICBzdXBlcigpXHJcbiAgICAgICAgdGhpcy5saXN0YSA9IFJlYWN0LmNyZWF0ZVJlZigpXHJcbiAgICB9XHJcbiAgICBjbGlja0NvbXBsZXRlPShldmVudCk9PntcclxuICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgY29tcGxldGUgOiAhdGhpcy5zdGF0ZS5jb21wbGV0ZVxyXG4gICAgICAgIH0pXHJcbiAgICAgICAgbGV0IGRhdGEgPSBuZXcgRm9ybURhdGEoKVxyXG4gICAgICAgIGRhdGEuYXBwZW5kKFwib3JpZ2VuXCIsIFwiY29tcGxldGVcIilcclxuICAgICAgICBkYXRhLmFwcGVuZChcImNvbXBsZXRlXCIsICF0aGlzLnN0YXRlLmNvbXBsZXRlID8gMTowKVxyXG4gICAgICAgIGRhdGEuYXBwZW5kKFwiaWRcIiwgdGhpcy5wcm9wcy5kYXRhLmlkKVxyXG4gICAgICAgIGZldGNoIChGcm9udF9kYXRhLnNlcnZlci51cmwse1xyXG4gICAgICAgICAgICBtZXRob2Q6IFwiUE9TVFwiLFxyXG4gICAgICAgICAgICBjcmVkZW50aWFsczogXCJpbmNsdWRlXCIsXHJcbiAgICAgICAgICAgIGJvZHk6IGRhdGFcclxuICAgICAgICB9KVxyXG4gICAgICAgICAgICAudGhlbihyZXM9PnsgICAgICBcclxuICAgICAgICAgICAgICAgIHRoaXMucHJvcHMuYWN0dWFsaXphcigpXHJcbiAgICAgICAgICAgIH0pIFxyXG4gICAgfVxyXG4gICAgY29tcG9uZW50V2lsbE1vdW50KCl7XHJcbiAgICAgICAgaWYodGhpcy5wcm9wcy5kYXRhLmNvbXBsZXRlID09IDEpe1xyXG4gICAgICAgICAgICB0aGlzLnNldFN0YXRlKHtcclxuICAgICAgICAgICAgICAgIGNvbXBsZXRlIDogdHJ1ZVxyXG4gICAgICAgICAgICB9KVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIFxyXG4gICAgcmVuZGVyKCl7XHJcbiAgICAgICAgY29uc3Qge3RpdGxlLCBjYXRlZ29yeSwgZGVzY3JpcHRpb24sIGlkfSA9IHRoaXMucHJvcHMuZGF0YVxyXG4gICAgICAgIGNvbnN0IHtmb3JtfSA9IHRoaXMucHJvcHMuZm9ybVxyXG4gICAgICAgIGNvbnN0IHthY3R1YWxpemFyfSA9IHRoaXMucHJvcHNcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8ZGl2ICBjbGFzc05hbWU9XCJyb3dcIj5cclxuICAgICAgICAgICAgICAgIDxkaXYgIHJlZj17dGhpcy5saXN0YX0gb25DbGljaz17dGhpcy5jbGlja0NvbXBsZXRlfSAgY2xhc3NOYW1lPVwiTGlzdGEgY29sLTkgY29sLW1kLTExIHNoYWRvdy1ub25lIHAtMyBtYi0zIG10LTMgYmctbGlnaHQgcm91bmRlZFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxoMz5cclxuICAgICAgICAgICAgICAgICAgICAgICAge3RpdGxlfVxyXG4gICAgICAgICAgICAgICAgICAgIDwvaDM+XHJcbiAgICAgICAgICAgICAgICAgICAgPENhdGVnb3J5IGNhdGVnb3J5PXtjYXRlZ29yeX0+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9DYXRlZ29yeT5cclxuICAgICAgICAgICAgICAgICAgICA8aDYgY2xhc3NOYW1lPVwiIG10LTMgdGV4dC1tdXRlZFwiPntkZXNjcmlwdGlvbn08L2g2PlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIkNvbXBsZXRlIGNvbCBjb2wtMSBvZmZzZXQtMSBvZmZzZXQtbWQtMCBwLTMgbWItMyBtdC0zIFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxGb3JtIGRhdGE9e2Zvcm19IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9IGlkPXtpZH0+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgIDwvRm9ybT5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICAgICAgICAgICAgICAuTGlzdGF7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlciAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAke3RoaXMuc3RhdGUuY29tcGxldGUgJiZcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwiYmFja2dyb3VuZDogcmdiYSg0NSwyMTAsNDUsMC41KSAhaW1wb3J0YW50O1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgLkNvbXBsZXRle1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXIgIWltcG9ydGFudDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTpmbGV4O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgICAgICAgICAgICAgICAgICAgICAgYWxpZ24taXRlbXM6Y2VudGVyO1xyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgICAgICAgIFxyXG5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59XHJcbmV4cG9ydCBkZWZhdWx0IExpc3RhXHJcblxyXG4gICJdfQ== */\n/*@ sourceURL=D:\\xampp\\htdocs\\listas-php-react\\components\\dumb\\Lista.js */"),
         dynamic: [this.state.complete && "background: rgba(45,210,45,0.5) !important;"],
         __self: this
       }));
@@ -885,30 +1249,40 @@ function Login(props) {
       form = _props$data.form;
   var actualizar = props.actualizar,
       session = props.session;
-  var method = form.method,
-      action = form.action,
-      origen = form.origen,
-      form_group = form.form_group,
-      btn_type = form.btn_type,
-      btn_message = form.btn_message;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
     session: session,
     actualizar: actualizar,
     data: form,
+    inModal: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 11
     },
     __self: this
   }));
-}
+} // import React, { Component } from 'react'
+// import Form from "../Form"
+// import Modal from "../Modal"
+// export class Login extends Component {
+//   render() {
+//     const {title, form} = this.props.data
+//     const {actualizar,session} = this.props
+//     return (
+//         <Modal title={title} refe={this.modal}>
+//             <Form session={session} actualizar={actualizar} data={form}>
+//             </Form>
+//         </Modal>
+//     )
+//   }
+// }
+// export default Login
 
 /***/ }),
 
@@ -934,23 +1308,18 @@ function Logout(props) {
   var _props$data = props.data,
       title = _props$data.title,
       form = _props$data.form;
-  var actualizar = props.actualizar;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item m-2",
+  var actualizar = props.actualizar,
+      logout = props.logout;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    logout: logout,
+    actualizar: actualizar,
+    data: form,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    actualizar: actualizar,
-    data: form,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }));
+  });
 }
 
 /***/ }),
@@ -977,18 +1346,23 @@ function Register(props) {
   var _props$data = props.data,
       title = _props$data.title,
       form = _props$data.form;
+  var actualizar = props.actualizar,
+      session = props.session;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
     title: title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
     data: form,
+    actualizar: actualizar,
+    session: session,
+    inModal: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }));
@@ -1538,18 +1912,6 @@ module.exports = _typeof;
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/regenerator/index.js ***!
   \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
-
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/regenerator/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8527,7 +8889,7 @@ if (!self.fetch) {
 /*! exports provided: forms, server, default */
 /***/ (function(module) {
 
-module.exports = {"forms":{"login":{"title":"LOGIN","form":{"origen":"login","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"label":"Email","name":"email","placeholder":"Email","type":"email"},{"label":"Password","name":"password","placeholder":"Password","type":"password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"logout":{"title":"Cerrar Sesión","form":{"origen":"logout","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"btn_type":"btn-dark","btn_message":"Cerrar Sesión"}},"register":{"title":"REGISTER","form":{"origen":"register","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"label":"Email","name":"email","placeholder":"Email","type":"email"},{"label":"Password","name":"password","placeholder":"Password","type":"password"}],"btn_type":"btn-success","btn_message":"Enviar"}},"add_list":{"title":"Agregar","form":{"origen":"add_list","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"name":"title","placeholder":"Título","type":"text"},{"name":"description","placeholder":"Descripcion","type":"text"}],"btn_type":"btn-success","btn_message":"Agregar"}},"delete_list":{"title":"X","form":{"origen":"delete_list","method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"btn_type":"btn-danger","btn_message":"X"}}},"server":{"url":"http://localhost/listas-php-react/server/index.php"}};
+module.exports = {"forms":{"login":{"title":"LOGIN","form":{"method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"id":"login_email","label":"Email","name":"email","placeholder":"Email","type":"email","required":true},{"id":"login_password","label":"Password","name":"password","placeholder":"Password","type":"password","required":true}],"form_append":[{"name":"origen","value":"login"}],"btn_type":"btn-success","btn_message":"Enviar"}},"logout":{"title":"Cerrar Sesión","form":{"method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"form_append":[{"name":"origen","value":"logout"}],"btn_type":"btn-dark","btn_message":"Cerrar Sesión"}},"register":{"title":"REGISTER","form":{"method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"id":"register_email","label":"Email","name":"email","placeholder":"Email","type":"email","required":true},{"id":"register_password","label":"Password","name":"password","placeholder":"Password","type":"password","required":true}],"form_append":[{"name":"origen","value":"register"}],"btn_type":"btn-success","btn_message":"Enviar"}},"add_list":{"title":"Agregar","form":{"method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[{"id":"add_list_title","name":"title","placeholder":"Título","type":"text","required":true},{"id":"add_list_description","name":"description","placeholder":"Descripcion","type":"text"}],"form_append":[{"name":"origen","value":"add_list"}],"btn_type":"btn-success","btn_message":"Agregar"}},"delete_list":{"title":"X","form":{"method":"POST","action":"https://listas-php-react.herokuapp.com/","form_group":[],"form_append":[{"name":"origen","value":"delete_list"}],"btn_type":"btn-danger","btn_message":"X"}}},"server":{"url":"http://localhost/listas-php-react/server/index.php"}};
 
 /***/ }),
 
@@ -8541,24 +8903,17 @@ module.exports = {"forms":{"login":{"title":"LOGIN","form":{"origen":"login","me
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "index", function() { return index; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-fetch */ "./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
-/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_Listas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Listas */ "./components/Listas.js");
-/* harmony import */ var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json");
-var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! isomorphic-fetch */ "./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
+/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
+/* harmony import */ var _components_Listas__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Listas */ "./components/Listas.js");
+/* harmony import */ var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json");
+var _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./front_data/front_data.json */ "./pages/front_data/front_data.json", 1);
 var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\pages\\index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -8601,17 +8956,36 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "session", function (email, password) {
-      console.log(_this.state.data.session);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      data: {
+        title: "",
+        listas: [],
+        session: null
+      },
+      login: false
+    });
 
-      if (_this.state.data.session != null) {
-        window.sessionStorage.email = email;
-        window.sessionStorage.password = password;
-      }
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "session", function (data) {
+      console.log("session iniciando");
+      console.log("session storage");
+      window.sessionStorage.email = data.get("email");
+      window.sessionStorage.password = data.get("password");
+
+      _this.login();
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "logout", function () {
+      console.log("logout");
+      window.sessionStorage.clear();
+
+      _this.setState({
+        login: false
+      });
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "actualizar", function () {
-      fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url, {
+      console.log("actualizando...");
+      fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__.server.url, {
         method: "GET",
         credentials: "include"
       }).then(function (res) {
@@ -8620,6 +8994,10 @@ function (_Component) {
         _this.setState({
           data: data
         });
+
+        console.log("actualización exitosa");
+      }).catch(function (error) {
+        console.error("Algo a fallado en request al servidor: " + error);
       });
     });
 
@@ -8627,43 +9005,74 @@ function (_Component) {
   }
 
   _createClass(index, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      // let rs = this.props.req
-      // console.log(rs)
-      this.setState({
-        data: this.props.data
-      });
-    }
+    key: "login",
+    value: function login() {
+      var _this2 = this;
+
+      if (window.sessionStorage.email && window.sessionStorage.password) {
+        console.log("loguandose...");
+        var _window$sessionStorag = window.sessionStorage,
+            email = _window$sessionStorag.email,
+            password = _window$sessionStorag.password;
+        var data = new FormData();
+        data.append("email", email);
+        data.append("password", password);
+        data.append("origen", "login");
+        fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__.server.url, {
+          method: "POST",
+          credentials: "include",
+          body: data
+        }).then(function (res) {
+          return res.json();
+        }).then(function (res) {
+          !res.error ? _this2.setState({
+            login: true
+          }) : _this2.setState({
+            login: false
+          });
+
+          _this2.actualizar();
+        }).catch(function (error) {
+          _this2.actualizar();
+
+          console.log("hubo un error al iniciar SESSIÓN desde el servidor: " + error);
+        });
+      } else {
+        console.log("usted no ha iniciado sessión");
+      }
+    } // componentWillMount(){
+    //   this.actualizar()
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      var data = this.state.data; // console.log("data.session")
-      // console.log(data.session)
-
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      var _this$state = this.state,
+          data = _this$state.data,
+          login = _this$state.login,
+          showApp = _this$state.showApp;
+      console.log("valor de login: " + login);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        prefetch: true,
+        login: login,
+        logout: this.logout,
         session: this.session,
         actualizar: this.actualizar,
-        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
+        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__.forms,
         title: data.title,
+        user: data.user,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 93
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        },
-        __self: this
-      }, "data.session es: ", data.session ? data.session : "no hay nada"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, login && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_3__["default"], {
         actualizar: this.actualizar,
-        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.forms,
+        forms: _front_data_front_data_json__WEBPACK_IMPORTED_MODULE_4__.forms,
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 104
         },
         __self: this
       }));
@@ -8671,58 +9080,17 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      // console.log(window.sessionStorage)
-      if (window.sessionStorage.email && window.sessionStorage.password) {} else {
-        console.log("sessionStorage no está definido");
-      }
+      var _this3 = this;
+
+      // this.login()
+      setTimeout(function () {
+        _this3.login();
+      }, 500);
     }
-  }], [{
-    key: "getInitialProps",
-    value: function () {
-      var _getInitialProps = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var req, data;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return fetch(_front_data_front_data_json__WEBPACK_IMPORTED_MODULE_5__.server.url, {
-                  method: "GET",
-                  credentials: "include"
-                });
-
-              case 2:
-                req = _context.sent;
-                _context.next = 5;
-                return req.json();
-
-              case 5:
-                data = _context.sent;
-                return _context.abrupt("return", {
-                  data: data,
-                  req: req
-                });
-
-              case 7:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function getInitialProps() {
-        return _getInitialProps.apply(this, arguments);
-      }
-
-      return getInitialProps;
-    }()
   }]);
 
   return index;
-}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (index);
     (function (Component, route) {
       if(!Component) return

@@ -3,21 +3,30 @@
         "login":{
             "title": "LOGIN",
             "form":{
-                "origen":"login",
                 "method":"POST",
                 "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
+                        "id":"login_email",
                         "label":"Email",
                         "name":"email",
                         "placeholder":"Email",
-                        "type":"email"
+                        "type":"email",
+                        "required": true
                     },
                     {
+                        "id":"login_password",
                         "label":"Password",
                         "name":"password",
                         "placeholder":"Password",
-                        "type":"password"
+                        "type":"password",
+                        "required": true
+                    }
+                ],
+                "form_append":[
+                    {
+                        "name": "origen",
+                        "value": "login"
                     }
                 ],
                 "btn_type":"btn-success",
@@ -27,10 +36,15 @@
         "logout":{
             "title": "Cerrar Sesión",
             "form":{
-                "origen":"logout",
                 "method":"POST",
                 "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
+                ],
+                "form_append":[
+                    {
+                        "name": "origen",
+                        "value": "logout"
+                    }
                 ],
                 "btn_type":"btn-dark",
                 "btn_message":"Cerrar Sesión"
@@ -39,21 +53,30 @@
         "register":{
             "title": "REGISTER",
             "form":{
-                "origen":"register",
                 "method":"POST",
                 "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
+                        "id":"register_email",
                         "label":"Email",
                         "name":"email",
                         "placeholder":"Email",
-                        "type":"email"
+                        "type":"email",
+                        "required": true
                     },
                     {
+                        "id":"register_password",
                         "label":"Password",
                         "name":"password",
                         "placeholder":"Password",
-                        "type":"password"
+                        "type":"password",
+                        "required": true
+                    }
+                ],
+                "form_append":[
+                    {
+                        "name": "origen",
+                        "value": "register"
                     }
                 ],
                 "btn_type":"btn-success",
@@ -63,19 +86,27 @@
         "add_list":{
             "title": "Agregar",
             "form":{
-                "origen":"add_list",
                 "method":"POST",
                 "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[
                     {
+                        "id":"add_list_title",
                         "name":"title",
                         "placeholder":"Título",
-                        "type":"text"
+                        "type":"text",
+                        "required": true
                     },
                     {
+                        "id":"add_list_description",
                         "name":"description",
                         "placeholder":"Descripcion",
                         "type":"text"
+                    }
+                ],
+                "form_append":[
+                    {
+                        "name": "origen",
+                        "value": "add_list"
                     }
                 ],
                 "btn_type":"btn-success",
@@ -85,10 +116,16 @@
         "delete_list":{
             "title": "X",
             "form":{
-                "origen":"delete_list",
                 "method":"POST",
                 "action":"https://listas-php-react.herokuapp.com/",
                 "form_group":[],
+                "form_append":[
+                    {
+                        "name": "origen",
+                        "value": "delete_list"
+                    }
+                ],
+                
                 "btn_type":"btn-danger",
                 "btn_message":"X"
             }

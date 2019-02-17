@@ -9,69 +9,112 @@ import Front_data from "./front_data/front_data.json"
 
 
 export class index extends Component {
-  static async getInitialProps(){
-    
-    let req = await fetch(Front_data.server.url,{
-      method: "GET",
-      credentials: "include"  
-    })
-    let data = await req.json();
-    return {data, req}
+    state={
+    data:{
+      title: "",
+      listas:[],
+      session:null
+    },
+    login:false
   }
-  session=(email, password)=>{
+  session=(data)=>{
+    console.log("session iniciando")
+    console.log("session storage")
+    window.sessionStorage.email=data.get("email")
+    window.sessionStorage.password=data.get("password")
+    
+    this.login()
+  }
+  logout=()=>{
+    console.log("logout")
+    window.sessionStorage.clear()
+    this.setState({
+      login:false
+    })
+  }
+  login(){
+    if (window.sessionStorage.email && window.sessionStorage.password){
+      console.log("loguandose...")
+      let {email, password} = window.sessionStorage
+      let data = new FormData();
+      data.append("email", email)
+      data.append("password", password)
+      data.append("origen", "login")
 
-    console.log(this.state.data.session)
-    if (this.state.data.session != null){
-      window.sessionStorage.email=email
-      window.sessionStorage.password=password
+      fetch (Front_data.server.url,{
+        method: "POST",
+        credentials: "include",
+        body: data
+      })
+      .then(res=>{      
+        return res.json()
+      })
+      .then(res=>{
+        !res.error ?
+        this.setState({login: true})
+        :
+        this.setState({login: false});
+        this.actualizar()
+      })
+      .catch(error=>{
+        this.actualizar()
+        console.log("hubo un error al iniciar SESSIÓN desde el servidor: "+error)
+      }) 
+    }else{
+      console.log("usted no ha iniciado sessión")
     }
   }
-  componentWillMount(){
-    // let rs = this.props.req
-    // console.log(rs)
-    this.setState({
-      data: this.props.data
-    })
-    
-  }
+  // componentWillMount(){
+  //   this.actualizar()
+  // }
   actualizar=()=>{
+    console.log("actualizando...")
     fetch (Front_data.server.url,{
       method: "GET",
-      credentials: "include"  
+      credentials: "include",
     })
     .then(res=>{      
       return res.json() 
     })  
     .then(data=>{
       this.setState({data:data})
+      console.log("actualización exitosa")
     })
+    .catch(error=>{
+      console.error("Algo a fallado en request al servidor: "+error)
+    })
+  
   }
   render() {
-    const {data} = this.state
-    // console.log("data.session")
-    // console.log(data.session)
+    
+    const {data, login, showApp} = this.state
+    console.log("valor de login: "+login)
     return (
       <Layout
+      prefetch
+      login = {login}
+      logout={this.logout}
       session={this.session}
       actualizar={this.actualizar}
       forms={Front_data.forms} 
-      title={data.title}>
-      <h4>data.session es: {data.session ? data.session : "no hay nada"}</h4>
+      title={data.title}
+      user={data.user}>
+      {
+        login &&
         <Listas
         actualizar={this.actualizar}
         forms={Front_data.forms} 
         listas={data.listas}>
         </Listas>
+      }
       </Layout>
     )
   }
   componentDidMount(){
-      // console.log(window.sessionStorage)
-    if (window.sessionStorage.email && window.sessionStorage.password ){
-      
-    } else{
-      console.log("sessionStorage no está definido")
-    }
+      // this.login()
+      setTimeout(()=>{
+        this.login()
+      }, 500)
   }
 }
 

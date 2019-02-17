@@ -10,12 +10,34 @@ class LoginController{
             if(\password_verify($postData["password"], $user->password)){
                 $_SESSION["userId"] = $user->id;
                 $sessionUserId = $user->id;
-                // return true;
-            } 
-        } 
+                echo json_encode(array(
+                    "error"=>false,
+                    "origen"=>"login",
+                    "message"=>"Datos correctos"
+                ));
+            }else{
+                echo json_encode(array(
+                    "error"=>true,
+                    "origen"=>"login",
+                    "message"=>"el nombre de usuario o contraseña no es correcto"
+                ));
+            }
+            
+        }else{
+            echo json_encode(array(
+                "error"=>true,
+                "origen"=>"login",
+                "message"=>"el nombre de usuario o contraseña no es correcto"
+            ));
+        }
     }
     public function Logout(){
         unset($_SESSION["userId"]);
+        echo json_encode(array(
+            "error"=>false,
+            "origen"=>"logout",
+            "message"=>"El usuario ha cerrado sessión"
+        ));
     }
 }
 

@@ -3,13 +3,12 @@ import Form from "../Form"
 import Modal from "../Modal"
 export default function Logout(props) {
     const {title, form} = props.data
-    const {actualizar} = props
+    const {actualizar, logout} = props
     return (
-        <li className="nav-item m-2">
-            <Form 
-            actualizar={actualizar}
-            data={form}>
-            </Form>
-        </li>
+        <Form 
+        logout={logout}
+        actualizar={actualizar}
+        data={form}>
+        </Form>
     )
 }
