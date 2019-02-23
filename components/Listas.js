@@ -21,7 +21,7 @@ export class Listas extends Component {
 
     return (
         <div className="Listas container mt-4">
-            <div className="row">
+            <div className="row bg-light">
                 <Add 
                 actualizar={actualizar}
                 form={forms.add_list}>

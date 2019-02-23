@@ -81,12 +81,19 @@ function (_Component) {
       // console.log("handleALERT")
       // console.log(this.state.handleAlert)
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: " col pt-3 pb-3",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
         title: title,
         modalPermance: modalPermance,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -97,10 +104,10 @@ function (_Component) {
         inModal: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         },
         __self: this
-      }));
+      })));
     }
   }]);
 
@@ -521,7 +528,7 @@ function (_Component) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         name: "viewport",
-        content: "width=device-width, initial-scale=1, shrink-to-fit=no",
+        content: "width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19
@@ -571,7 +578,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "navbar navbar-expand navbar-dark bg-dark",
+        className: "navbar navbar-expand-lg navbar-dark bg-dark container",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 32
@@ -585,25 +592,46 @@ function (_Component) {
           lineNumber: 33
         },
         __self: this
-      }, "".concat(title, " de ").concat(user ? user : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "collapse navbar-collapse ",
+      }, "".concat(title, " de ").concat(user ? user : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        class: "navbar-toggler",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarSupportedContent",
+        "aria-controls": "navbarSupportedContent",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "navbar-toggler-icon",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "collapse navbar-collapse ",
+        id: "navbarSupportedContent",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 38
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item m-2 ",
+        className: "nav-item mt-2 m-lg-2 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 39
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -612,14 +640,14 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 40
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item m-2 ",
+        className: "nav-item mt-2 m-lg-2 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -628,14 +656,14 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 43
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item m-2 ",
+        className: "nav-item mt-2 m-lg-2 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -644,7 +672,7 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 46
         },
         __self: this
       }, " "))))), this.props.children) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -654,42 +682,42 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 57
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 58
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "card-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 59
         },
         __self: this
       }, "Listas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "card-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 60
         },
         __self: this
       }, "Por favor Logueate o Reg\xEDstrate para poder usar la APP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "d-flex justify-content-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "m-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -698,14 +726,14 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 63
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "m-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 65
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -714,7 +742,7 @@ function (_Component) {
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 66
         },
         __self: this
       }))))));
@@ -818,7 +846,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row",
+        className: "row bg-light",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 24

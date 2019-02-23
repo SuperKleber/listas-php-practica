@@ -22,6 +22,7 @@ export class Add extends Component {
     // console.log("handleALERT")
     // console.log(this.state.handleAlert)
     return (
+      <div className=" col pt-3 pb-3">
         <Modal title={title} modalPermance={modalPermance}>
             <Form
             handleAlert={this.state.handleAlert}
@@ -31,6 +32,7 @@ export class Add extends Component {
             inModal={true}>
             </Form>
         </Modal>
+      </div>
         
     )
   }
