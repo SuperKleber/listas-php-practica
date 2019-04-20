@@ -314,6 +314,8 @@ function (_Component) {
             _this.props.action && _this.props.action(_this.pushHandlerAlert(res, "alert-success"));
 
             _this.props.actualizar();
+
+            _this.formAjax.current.reset();
           } else {
             console.log("error en: " + res.origen);
 
@@ -361,7 +363,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 108
+          lineNumber: 109
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -369,7 +371,7 @@ function (_Component) {
         method: method,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109
+          lineNumber: 110
         },
         __self: this
       }, form_group.map(function (element) {
@@ -378,13 +380,13 @@ function (_Component) {
           className: "form-group",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 114
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 115
           },
           __self: this
         }, element.label), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -396,7 +398,7 @@ function (_Component) {
           type: element.type,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 116
           },
           __self: this
         }));
@@ -404,14 +406,14 @@ function (_Component) {
         className: "alerts",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 129
         },
         __self: this
       }, this.state.handleAlert && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Alert__WEBPACK_IMPORTED_MODULE_2__["default"], {
         data: this.state.handleAlert,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 131
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -420,7 +422,7 @@ function (_Component) {
         className: "btn  " + btn_type,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 134
         },
         __self: this
       }, btn_message)));
@@ -443,16 +445,19 @@ function (_Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Layout", function() { return Layout; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/_master.less */ "./styles/_master.less");
-/* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_master_less__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _dumb_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dumb/Login */ "./components/dumb/Login.js");
-/* harmony import */ var _dumb_Register__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dumb/Register */ "./components/dumb/Register.js");
-/* harmony import */ var _dumb_Logout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dumb/Logout */ "./components/dumb/Logout.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/_master.less */ "./styles/_master.less");
+/* harmony import */ var _styles_master_less__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_master_less__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _dumb_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dumb/Login */ "./components/dumb/Login.js");
+/* harmony import */ var _dumb_Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./dumb/Register */ "./components/dumb/Register.js");
+/* harmony import */ var _dumb_Logout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dumb/Logout */ "./components/dumb/Logout.js");
 var _jsxFileName = "D:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js";
+
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -500,33 +505,33 @@ function (_Component) {
           session = _this$props.session,
           logout = _this$props.logout,
           login = _this$props.login;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "Layout",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
         },
         __self: this
-      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+      }, title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
         name: "viewport",
         content: "width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no",
         __source: {
@@ -534,7 +539,7 @@ function (_Component) {
           lineNumber: 19
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         rel: "stylesheet",
         href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
         integrity: "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO",
@@ -544,7 +549,7 @@ function (_Component) {
           lineNumber: 22
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
         src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
         integrity: "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
         crossorigin: "anonymous",
@@ -553,7 +558,7 @@ function (_Component) {
           lineNumber: 25
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
         src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
         integrity: "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1",
         crossorigin: "anonymous",
@@ -562,7 +567,7 @@ function (_Component) {
           lineNumber: 26
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
         src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
         integrity: "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM",
         crossorigin: "anonymous",
@@ -571,20 +576,20 @@ function (_Component) {
           lineNumber: 27
         },
         __self: this
-      })), login ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), login ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 31
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
         className: "navbar navbar-expand-lg navbar-dark bg-dark container",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 32
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "navbar-brand",
         href: "",
         __source: {
@@ -592,8 +597,14 @@ function (_Component) {
           lineNumber: 33
         },
         __self: this
-      }, "".concat(title, " de ").concat(user ? user : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        class: "navbar-toggler",
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, "".concat(title, " de ").concat(user ? user : ""))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "navbar-toggler",
         type: "button",
         "data-toggle": "collapse",
         "data-target": "#navbarSupportedContent",
@@ -602,155 +613,170 @@ function (_Component) {
         "aria-label": "Toggle navigation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "navbar-toggler-icon",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "collapse navbar-collapse ",
-        id: "navbarSupportedContent",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "navbar-nav ml-auto ",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 38
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item mt-2 m-lg-2 ",
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "navbar-toggler-icon",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 39
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        session: session,
-        data: forms.login,
-        actualizar: actualizar,
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "collapse navbar-collapse ",
+        id: "navbarSupportedContent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 41
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item mt-2 m-lg-2 ",
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "navbar-nav ml-auto ",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        session: session,
-        data: forms.register,
-        actualizar: actualizar,
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item mt-2 m-lg-2 ",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item mt-2 m-lg-2 ",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        logout: logout,
-        data: forms.logout,
-        actualizar: actualizar,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, " "))))), this.props.children) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card m-auto",
-        style: {
-          width: "18rem"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "card-body",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "card-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        },
-        __self: this
-      }, "Listas"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "card-text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        },
-        __self: this
-      }, "Por favor Logueate o Reg\xEDstrate para poder usar la APP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "d-flex justify-content-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "m-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_4__["default"], {
         session: session,
         data: forms.login,
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 44
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "m-1",
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item mt-2 m-lg-2 ",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 46
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_5__["default"], {
         session: session,
         data: forms.register,
         actualizar: actualizar,
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item mt-2 m-lg-2 ",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dumb_Logout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        logout: logout,
+        data: forms.logout,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, " "))))), this.props.children) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "jsx-2315920125" + " " + "container d-flex justify-content-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        style: {
+          width: "18rem"
+        },
+        className: "jsx-2315920125" + " " + "card m-auto",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "jsx-2315920125" + " " + "card-body",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h5", {
+        className: "jsx-2315920125" + " " + "card-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, "Listas"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
+        className: "jsx-2315920125" + " " + "card-text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, "Por favor Logueate o Reg\xEDstrate para poder usar la APP"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "jsx-2315920125" + " " + "d-flex justify-content-center",
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 66
         },
         __self: this
-      }))))));
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "jsx-2315920125" + " " + "m-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dumb_Login__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        session: session,
+        data: forms.login,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "jsx-2315920125" + " " + "m-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_dumb_Register__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        session: session,
+        data: forms.register,
+        actualizar: actualizar,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+        styleId: "1340066211",
+        css: ".container.jsx-2315920125{min-height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxMYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBMkV3QixBQUdrQyxpQkFDbkIiLCJmaWxlIjoiRDpcXHhhbXBwXFxodGRvY3NcXGxpc3Rhcy1waHAtcmVhY3RcXGNvbXBvbmVudHNcXExheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCdcclxuaW1wb3J0IEhlYWQgZnJvbSBcIm5leHQvaGVhZFwiXHJcbmltcG9ydCBcIi4uL3N0eWxlcy9fbWFzdGVyLmxlc3NcIlxyXG5cclxuaW1wb3J0IExvZ2luIGZyb20gXCIuL2R1bWIvTG9naW5cIlxyXG5pbXBvcnQgUmVnaXN0ZXIgZnJvbSBcIi4vZHVtYi9SZWdpc3RlclwiXHJcbmltcG9ydCBMb2dvdXQgZnJvbSAnLi9kdW1iL0xvZ291dCc7XHJcblxyXG5leHBvcnQgY2xhc3MgTGF5b3V0IGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICBcclxuICByZW5kZXIoKSB7XHJcbiAgICBjb25zdCB7dGl0bGUsdXNlciwgZm9ybXMsIGFjdHVhbGl6YXIsc2Vzc2lvbixsb2dvdXQsIGxvZ2lufSA9IHRoaXMucHJvcHNcclxuICAgIHJldHVybiAoXHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiTGF5b3V0XCI+XHJcbiAgICAgICAgPEhlYWQ+XHJcbiAgICAgICAgICAgIDx0aXRsZT57dGl0bGV9PC90aXRsZT5cclxuICAgICAgICAgICAgey8qIDwhLS0gUmVxdWlyZWQgbWV0YSB0YWdzIC0tPiAqL31cclxuICAgICAgICAgICAgPG1ldGEgY2hhcnNldD1cInV0Zi04XCIvPlxyXG4gICAgICAgICAgICA8bWV0YSBuYW1lPVwidmlld3BvcnRcIiBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEsIHVzZXItc2NhbGFibGU9bm8sIHNocmluay10by1maXQ9bm9cIi8+XHJcblxyXG4gICAgICAgICAgICB7LyogPCEtLSBCb290c3RyYXAgQ1NTIC0tLz4gKi99XHJcbiAgICAgICAgICAgIDxsaW5rIHJlbD1cInN0eWxlc2hlZXRcIiBocmVmPVwiaHR0cHM6Ly9zdGFja3BhdGguYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvNC4xLjMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzXCIgaW50ZWdyaXR5PVwic2hhMzg0LU1Ddzk4L1NGbkdFOGZKVDNHWHdFT25nc1Y3WnQyN05YRm9hb0FwbVltODFpdVhvUGtGT0p3SjhFUmRrbkxQTU9cIiBjcm9zc29yaWdpbj1cImFub255bW91c1wiLz5cclxuXHJcbiAgICAgICAgICAgIHsvKiBTY3JpcHRzICovfVxyXG4gICAgICAgICAgICA8c2NyaXB0IHNyYz1cImh0dHBzOi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjMuMS5zbGltLm1pbi5qc1wiIGludGVncml0eT1cInNoYTM4NC1xOGkvWCs5NjVEek8wclQ3YWJLNDFKU3RRSUFxVmdSVnpwYnpvNXNtWEtwNFlmUnZIKzhhYnRURTFQaTZqaXpvXCIgY3Jvc3NvcmlnaW49XCJhbm9ueW1vdXNcIj48L3NjcmlwdD5cclxuICAgICAgICAgICAgPHNjcmlwdCBzcmM9XCJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9wb3BwZXIuanMvMS4xNC43L3VtZC9wb3BwZXIubWluLmpzXCIgaW50ZWdyaXR5PVwic2hhMzg0LVVPMmVUMENwSHFkU0pRNmhKdHk1S1ZwaHRQaHpXajlXTzFjbEhUTUdhM0pEWndyblFxNHNGODZkSUhORHowVzFcIiBjcm9zc29yaWdpbj1cImFub255bW91c1wiPjwvc2NyaXB0PlxyXG4gICAgICAgICAgICA8c2NyaXB0IHNyYz1cImh0dHBzOi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuMy4xL2pzL2Jvb3RzdHJhcC5taW4uanNcIiBpbnRlZ3JpdHk9XCJzaGEzODQtSmpTbVZneWQwcDNwWEIxclJpYlpVQVlvSUl5Nk9yUTZWcmpJRWFGZi9uSkd6SXhGRHNmNHgweElNK0IwN2pSTVwiIGNyb3Nzb3JpZ2luPVwiYW5vbnltb3VzXCI+PC9zY3JpcHQ+XHJcbiAgICAgICAgPC9IZWFkPlxyXG4gICAgICAgIHtcclxuICAgICAgICAgIGxvZ2luID8gXHJcbiAgICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgICA8bmF2IGNsYXNzTmFtZT1cIm5hdmJhciBuYXZiYXItZXhwYW5kLWxnIG5hdmJhci1kYXJrIGJnLWRhcmsgY29udGFpbmVyXCI+XHJcbiAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibmF2YmFyLWJyYW5kXCIgaHJlZj1cIlwiPlxyXG4gICAgICAgICAgICAgICAgPGg2PlxyXG4gICAgICAgICAgICAgICAgICB7YCR7dGl0bGV9IGRlICR7dXNlciA/IHVzZXI6IFwiXCJ9YH1cclxuICAgICAgICAgICAgICAgIDwvaDY+XHJcbiAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPVwibmF2YmFyLXRvZ2dsZXJcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS10b2dnbGU9XCJjb2xsYXBzZVwiIGRhdGEtdGFyZ2V0PVwiI25hdmJhclN1cHBvcnRlZENvbnRlbnRcIiBhcmlhLWNvbnRyb2xzPVwibmF2YmFyU3VwcG9ydGVkQ29udGVudFwiIGFyaWEtZXhwYW5kZWQ9XCJmYWxzZVwiIGFyaWEtbGFiZWw9XCJUb2dnbGUgbmF2aWdhdGlvblwiPlxyXG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibmF2YmFyLXRvZ2dsZXItaWNvblwiPjwvc3Bhbj5cclxuICAgICAgICAgICAgICA8L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbGxhcHNlIG5hdmJhci1jb2xsYXBzZSBcIiBpZD1cIm5hdmJhclN1cHBvcnRlZENvbnRlbnRcIj5cclxuICAgICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cIm5hdmJhci1uYXYgbWwtYXV0byBcIj5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8TG9naW4gc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMubG9naW59IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvTG9naW4+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8UmVnaXN0ZXIgc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMucmVnaXN0ZXJ9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvUmVnaXN0ZXI+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8TG9nb3V0IGxvZ291dD17bG9nb3V0fSBkYXRhPXtmb3Jtcy5sb2dvdXR9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PiA8L0xvZ291dD5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICA8L3VsPlxyXG4gICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L25hdj5cclxuICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgIHRoaXMucHJvcHMuY2hpbGRyZW5cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgOlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb250YWluZXIgZC1mbGV4IGp1c3RpZnktY29udGVudC1jZW50ZXJcIj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYXJkIG0tYXV0b1wiIHN0eWxlPXt7d2lkdGg6IFwiMThyZW1cIn19PlxyXG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZC1ib2R5XCI+XHJcbiAgICAgICAgICAgICAgICA8aDUgY2xhc3NOYW1lPVwiY2FyZC10aXRsZVwiPkxpc3RhczwvaDU+XHJcbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJjYXJkLXRleHRcIj5Qb3IgZmF2b3IgTG9ndWVhdGUgbyBSZWfDrXN0cmF0ZSBwYXJhIHBvZGVyIHVzYXIgbGEgQVBQPC9wPlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJkLWZsZXgganVzdGlmeS1jb250ZW50LWNlbnRlclwiPlxyXG4gICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJtLTFcIj5cclxuICAgICAgICAgICAgICAgICAgPExvZ2luIHNlc3Npb249e3Nlc3Npb259IGRhdGE9e2Zvcm1zLmxvZ2lufSBhY3R1YWxpemFyPXthY3R1YWxpemFyfT48L0xvZ2luPlxyXG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cIm0tMVwiPlxyXG4gICAgICAgICAgICAgICAgICA8UmVnaXN0ZXIgc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMucmVnaXN0ZXJ9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvUmVnaXN0ZXI+XHJcbiAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAuY29udGFpbmVye1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogMTAwdmg7XHJcbiAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcclxuICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICBib2R5e1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogMTAwdmg7XHJcbiAgICAgICAgICAgICAgfSAgXHJcbiAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIH1cclxuICAgICAgICBcclxuICAgICAgPC9kaXY+XHJcbiAgICApXHJcbiAgfVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBMYXlvdXRcclxuIl19 */\n/*@ sourceURL=D:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js */",
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+        styleId: "4213513495",
+        css: "body{min-height:100vh;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx4YW1wcFxcaHRkb2NzXFxsaXN0YXMtcGhwLXJlYWN0XFxjb21wb25lbnRzXFxMYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZ0YrQixBQUlrQyxpQkFDbkIiLCJmaWxlIjoiRDpcXHhhbXBwXFxodGRvY3NcXGxpc3Rhcy1waHAtcmVhY3RcXGNvbXBvbmVudHNcXExheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCdcclxuaW1wb3J0IEhlYWQgZnJvbSBcIm5leHQvaGVhZFwiXHJcbmltcG9ydCBcIi4uL3N0eWxlcy9fbWFzdGVyLmxlc3NcIlxyXG5cclxuaW1wb3J0IExvZ2luIGZyb20gXCIuL2R1bWIvTG9naW5cIlxyXG5pbXBvcnQgUmVnaXN0ZXIgZnJvbSBcIi4vZHVtYi9SZWdpc3RlclwiXHJcbmltcG9ydCBMb2dvdXQgZnJvbSAnLi9kdW1iL0xvZ291dCc7XHJcblxyXG5leHBvcnQgY2xhc3MgTGF5b3V0IGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICBcclxuICByZW5kZXIoKSB7XHJcbiAgICBjb25zdCB7dGl0bGUsdXNlciwgZm9ybXMsIGFjdHVhbGl6YXIsc2Vzc2lvbixsb2dvdXQsIGxvZ2lufSA9IHRoaXMucHJvcHNcclxuICAgIHJldHVybiAoXHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiTGF5b3V0XCI+XHJcbiAgICAgICAgPEhlYWQ+XHJcbiAgICAgICAgICAgIDx0aXRsZT57dGl0bGV9PC90aXRsZT5cclxuICAgICAgICAgICAgey8qIDwhLS0gUmVxdWlyZWQgbWV0YSB0YWdzIC0tPiAqL31cclxuICAgICAgICAgICAgPG1ldGEgY2hhcnNldD1cInV0Zi04XCIvPlxyXG4gICAgICAgICAgICA8bWV0YSBuYW1lPVwidmlld3BvcnRcIiBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEsIHVzZXItc2NhbGFibGU9bm8sIHNocmluay10by1maXQ9bm9cIi8+XHJcblxyXG4gICAgICAgICAgICB7LyogPCEtLSBCb290c3RyYXAgQ1NTIC0tLz4gKi99XHJcbiAgICAgICAgICAgIDxsaW5rIHJlbD1cInN0eWxlc2hlZXRcIiBocmVmPVwiaHR0cHM6Ly9zdGFja3BhdGguYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvNC4xLjMvY3NzL2Jvb3RzdHJhcC5taW4uY3NzXCIgaW50ZWdyaXR5PVwic2hhMzg0LU1Ddzk4L1NGbkdFOGZKVDNHWHdFT25nc1Y3WnQyN05YRm9hb0FwbVltODFpdVhvUGtGT0p3SjhFUmRrbkxQTU9cIiBjcm9zc29yaWdpbj1cImFub255bW91c1wiLz5cclxuXHJcbiAgICAgICAgICAgIHsvKiBTY3JpcHRzICovfVxyXG4gICAgICAgICAgICA8c2NyaXB0IHNyYz1cImh0dHBzOi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjMuMS5zbGltLm1pbi5qc1wiIGludGVncml0eT1cInNoYTM4NC1xOGkvWCs5NjVEek8wclQ3YWJLNDFKU3RRSUFxVmdSVnpwYnpvNXNtWEtwNFlmUnZIKzhhYnRURTFQaTZqaXpvXCIgY3Jvc3NvcmlnaW49XCJhbm9ueW1vdXNcIj48L3NjcmlwdD5cclxuICAgICAgICAgICAgPHNjcmlwdCBzcmM9XCJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9wb3BwZXIuanMvMS4xNC43L3VtZC9wb3BwZXIubWluLmpzXCIgaW50ZWdyaXR5PVwic2hhMzg0LVVPMmVUMENwSHFkU0pRNmhKdHk1S1ZwaHRQaHpXajlXTzFjbEhUTUdhM0pEWndyblFxNHNGODZkSUhORHowVzFcIiBjcm9zc29yaWdpbj1cImFub255bW91c1wiPjwvc2NyaXB0PlxyXG4gICAgICAgICAgICA8c2NyaXB0IHNyYz1cImh0dHBzOi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuMy4xL2pzL2Jvb3RzdHJhcC5taW4uanNcIiBpbnRlZ3JpdHk9XCJzaGEzODQtSmpTbVZneWQwcDNwWEIxclJpYlpVQVlvSUl5Nk9yUTZWcmpJRWFGZi9uSkd6SXhGRHNmNHgweElNK0IwN2pSTVwiIGNyb3Nzb3JpZ2luPVwiYW5vbnltb3VzXCI+PC9zY3JpcHQ+XHJcbiAgICAgICAgPC9IZWFkPlxyXG4gICAgICAgIHtcclxuICAgICAgICAgIGxvZ2luID8gXHJcbiAgICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgICA8bmF2IGNsYXNzTmFtZT1cIm5hdmJhciBuYXZiYXItZXhwYW5kLWxnIG5hdmJhci1kYXJrIGJnLWRhcmsgY29udGFpbmVyXCI+XHJcbiAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibmF2YmFyLWJyYW5kXCIgaHJlZj1cIlwiPlxyXG4gICAgICAgICAgICAgICAgPGg2PlxyXG4gICAgICAgICAgICAgICAgICB7YCR7dGl0bGV9IGRlICR7dXNlciA/IHVzZXI6IFwiXCJ9YH1cclxuICAgICAgICAgICAgICAgIDwvaDY+XHJcbiAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPVwibmF2YmFyLXRvZ2dsZXJcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS10b2dnbGU9XCJjb2xsYXBzZVwiIGRhdGEtdGFyZ2V0PVwiI25hdmJhclN1cHBvcnRlZENvbnRlbnRcIiBhcmlhLWNvbnRyb2xzPVwibmF2YmFyU3VwcG9ydGVkQ29udGVudFwiIGFyaWEtZXhwYW5kZWQ9XCJmYWxzZVwiIGFyaWEtbGFiZWw9XCJUb2dnbGUgbmF2aWdhdGlvblwiPlxyXG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibmF2YmFyLXRvZ2dsZXItaWNvblwiPjwvc3Bhbj5cclxuICAgICAgICAgICAgICA8L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbGxhcHNlIG5hdmJhci1jb2xsYXBzZSBcIiBpZD1cIm5hdmJhclN1cHBvcnRlZENvbnRlbnRcIj5cclxuICAgICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cIm5hdmJhci1uYXYgbWwtYXV0byBcIj5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8TG9naW4gc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMubG9naW59IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvTG9naW4+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8UmVnaXN0ZXIgc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMucmVnaXN0ZXJ9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvUmVnaXN0ZXI+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgICAgICA8bGkgY2xhc3NOYW1lPVwibmF2LWl0ZW0gbXQtMiBtLWxnLTIgXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICA8TG9nb3V0IGxvZ291dD17bG9nb3V0fSBkYXRhPXtmb3Jtcy5sb2dvdXR9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PiA8L0xvZ291dD5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICA8L3VsPlxyXG4gICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L25hdj5cclxuICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgIHRoaXMucHJvcHMuY2hpbGRyZW5cclxuICAgICAgICAgICAgfVxyXG5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgOlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb250YWluZXIgZC1mbGV4IGp1c3RpZnktY29udGVudC1jZW50ZXJcIj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYXJkIG0tYXV0b1wiIHN0eWxlPXt7d2lkdGg6IFwiMThyZW1cIn19PlxyXG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZC1ib2R5XCI+XHJcbiAgICAgICAgICAgICAgICA8aDUgY2xhc3NOYW1lPVwiY2FyZC10aXRsZVwiPkxpc3RhczwvaDU+XHJcbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJjYXJkLXRleHRcIj5Qb3IgZmF2b3IgTG9ndWVhdGUgbyBSZWfDrXN0cmF0ZSBwYXJhIHBvZGVyIHVzYXIgbGEgQVBQPC9wPlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJkLWZsZXgganVzdGlmeS1jb250ZW50LWNlbnRlclwiPlxyXG4gICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJtLTFcIj5cclxuICAgICAgICAgICAgICAgICAgPExvZ2luIHNlc3Npb249e3Nlc3Npb259IGRhdGE9e2Zvcm1zLmxvZ2lufSBhY3R1YWxpemFyPXthY3R1YWxpemFyfT48L0xvZ2luPlxyXG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cIm0tMVwiPlxyXG4gICAgICAgICAgICAgICAgICA8UmVnaXN0ZXIgc2Vzc2lvbj17c2Vzc2lvbn0gZGF0YT17Zm9ybXMucmVnaXN0ZXJ9IGFjdHVhbGl6YXI9e2FjdHVhbGl6YXJ9PjwvUmVnaXN0ZXI+XHJcbiAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgICAgICAuY29udGFpbmVye1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogMTAwdmg7XHJcbiAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcclxuICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICBib2R5e1xyXG4gICAgICAgICAgICAgICAgbWluLWhlaWdodDogMTAwdmg7XHJcbiAgICAgICAgICAgICAgfSAgXHJcbiAgICAgICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIH1cclxuICAgICAgICBcclxuICAgICAgPC9kaXY+XHJcbiAgICApXHJcbiAgfVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBMYXlvdXRcclxuIl19 */\n/*@ sourceURL=D:\\xampp\\htdocs\\listas-php-react\\components\\Layout.js */",
+        __self: this
+      })));
     }
   }]);
 
   return Layout;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
 /***/ }),
@@ -8994,17 +9020,14 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "session", function (data) {
-      console.log("session iniciando");
-      console.log("session storage");
-      window.sessionStorage.email = data.get("email");
-      window.sessionStorage.password = data.get("password");
+      window.localStorage.email = data.get("email");
+      window.localStorage.password = data.get("password");
 
       _this.login();
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "logout", function () {
-      console.log("logout");
-      window.sessionStorage.clear();
+      window.localStorage.clear();
 
       _this.setState({
         login: false
@@ -9037,11 +9060,11 @@ function (_Component) {
     value: function login() {
       var _this2 = this;
 
-      if (window.sessionStorage.email && window.sessionStorage.password) {
+      if (window.localStorage.email && window.localStorage.password) {
         console.log("loguandose...");
-        var _window$sessionStorag = window.sessionStorage,
-            email = _window$sessionStorag.email,
-            password = _window$sessionStorag.password;
+        var _window$localStorage = window.localStorage,
+            email = _window$localStorage.email,
+            password = _window$localStorage.password;
         var data = new FormData();
         data.append("email", email);
         data.append("password", password);
@@ -9065,8 +9088,6 @@ function (_Component) {
 
           console.log("hubo un error al iniciar SESSIÓN desde el servidor: " + error);
         });
-      } else {
-        console.log("usted no ha iniciado sessión");
       }
     } // componentWillMount(){
     //   this.actualizar()
@@ -9079,7 +9100,6 @@ function (_Component) {
           data = _this$state.data,
           login = _this$state.login,
           showApp = _this$state.showApp;
-      console.log("valor de login: " + login);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
         prefetch: true,
         login: login,
@@ -9091,7 +9111,7 @@ function (_Component) {
         user: data.user,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 87
         },
         __self: this
       }, login && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Listas__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -9100,7 +9120,7 @@ function (_Component) {
         listas: data.listas,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 98
         },
         __self: this
       }));

@@ -16,6 +16,8 @@ $dotenv->load();
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Zend\Diactoros\Response\RedirectResponse;
 use Aura\Router\RouterContainer;
+
+
 use App\Controllers\ReadController;
 use App\Controllers\SaveController;
 use App\Controllers\RegisterController;
@@ -60,8 +62,10 @@ if ($request->getMethod() == "POST")
 {
     
     if($request->getParsedBody()["origen"] == "register"){
+        
         $Register = new RegisterController();
         $Register->SaveUser($request);
+        
     }
     if($request->getParsedBody()["origen"] == "login"){
         

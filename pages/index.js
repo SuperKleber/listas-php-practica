@@ -18,24 +18,21 @@ export class index extends Component {
     login:false
   }
   session=(data)=>{
-    console.log("session iniciando")
-    console.log("session storage")
-    window.sessionStorage.email=data.get("email")
-    window.sessionStorage.password=data.get("password")
+    window.localStorage.email=data.get("email")
+    window.localStorage.password=data.get("password")
     
     this.login()
   }
   logout=()=>{
-    console.log("logout")
-    window.sessionStorage.clear()
+    window.localStorage.clear()
     this.setState({
       login:false
     })
   }
   login(){
-    if (window.sessionStorage.email && window.sessionStorage.password){
+    if (window.localStorage.email && window.localStorage.password){
       console.log("loguandose...")
-      let {email, password} = window.sessionStorage
+      let {email, password} = window.localStorage
       let data = new FormData();
       data.append("email", email)
       data.append("password", password)
@@ -60,8 +57,6 @@ export class index extends Component {
         this.actualizar()
         console.log("hubo un error al iniciar SESSIÓN desde el servidor: "+error)
       }) 
-    }else{
-      console.log("usted no ha iniciado sessión")
     }
   }
   // componentWillMount(){
@@ -88,7 +83,6 @@ export class index extends Component {
   render() {
     
     const {data, login, showApp} = this.state
-    console.log("valor de login: "+login)
     return (
       <Layout
       prefetch

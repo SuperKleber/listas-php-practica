@@ -76,6 +76,7 @@ export class Form extends Component {
               this.props.closeModal && this.props.closeModal()
               this.props.action && this.props.action(this.pushHandlerAlert(res, "alert-success"))
               this.props.actualizar()
+              this.formAjax.current.reset()
             }else{
               console.log("error en: "+res.origen)
               this.setState({
