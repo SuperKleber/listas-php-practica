@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "name":"listas_php",
+    "builds": [
+        { "src": "*.php", "use": "@now/php" }
+    ],
+    "env":{
+        "NODE_ENV": "production",
+        "DB_DRIVER": "pgsql",
+        "DB_HOST":"ec2-54-235-178-189.compute-1.amazonaws.com",
+        "DB_NAME":"deat1fdm1m6otq",
+        "DB_USER":"hkralmacuddswr",
+        "DB_PASS":"1403aa0cfc74a31b48b9c60f2d437611756f4c078fe35972247a851479dcf5fd"
+    }
+}

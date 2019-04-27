@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 require_once './vendor/autoload.php';
 
 session_start();
-$dotenv = new Dotenv\Dotenv(__DIR__ . "/");
-$dotenv->load();
+// $dotenv = new Dotenv\Dotenv(__DIR__ . "/");
+// $dotenv->load();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Zend\Diactoros\Response\RedirectResponse;
@@ -29,15 +29,25 @@ use App\Controllers\DeleteController;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    "driver" => getenv("DB_DRIVER"),
-    "host" => getenv("DB_HOST"),
-    "database" => getenv("DB_NAME"),
-    "username" => getenv("DB_USER"),
-    "password" => getenv("DB_PASS"),
+    "driver" => "pgsql",
+    "host" => "ec2-54-235-178-189.compute-1.amazonaws.com",
+    "database" => "deat1fdm1m6otq",
+    "username" => "hkralmacuddswr",
+    "password" => "1403aa0cfc74a31b48b9c60f2d437611756f4c078fe35972247a851479dcf5fd",
     "charset" => "utf8",
     "collation" => 'utf8_unicode_ci',
     "prefix" => '',
 ]);
+// $capsule->addConnection([
+//     "driver" => getenv("DB_DRIVER"),
+//     "host" => getenv("DB_HOST"),
+//     "database" => getenv("DB_NAME"),
+//     "username" => getenv("DB_USER"),
+//     "password" => getenv("DB_PASS"),
+//     "charset" => "utf8",
+//     "collation" => 'utf8_unicode_ci',
+//     "prefix" => '',
+// ]);
 $capsule->setAsGlobal();
 $capsule->bootEloquent(); 
 
